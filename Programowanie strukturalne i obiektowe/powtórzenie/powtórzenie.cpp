@@ -19,7 +19,15 @@ void chooseOptionFromUser()
 
 void doSelectedTask()
 {
-    if(selectOption == 1)
+    if (selectOption == 1)
+    {
+        PoleKwadratu();
+    }
+    if (selectOption == 2)
+    {
+        PoleTrojkata();
+    }
+
 }
 
 void mainProgram()
