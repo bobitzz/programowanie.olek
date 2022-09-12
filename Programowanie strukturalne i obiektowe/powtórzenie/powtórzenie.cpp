@@ -40,15 +40,28 @@ void TriangleArea()
 
 void doSelectedTask(int selectedOption)
 {
-	if (selectedOption == 1)
+	switch (selectedOption)
 	{
+	case 1:
 		SquareArea();
-	}
-	if (selectedOption == 2)
-	{
+		break;
+	case 2:
 		TriangleArea();
+		break;
+	default:
+		cout << "brak opcji w menu\n";
+		break;
 	}
-
+	
+	/*	if (selectedOption == 1)
+		{
+			SquareArea();
+		}
+		if (selectedOption == 2)
+		{
+			TriangleArea();
+		}
+	*/
 }
 
 void mainProgram()
