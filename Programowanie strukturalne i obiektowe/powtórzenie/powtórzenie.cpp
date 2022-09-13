@@ -42,6 +42,8 @@ void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
 	{
+	case 0:
+		return;
 	case 1:
 		SquareArea();
 		break;
@@ -52,7 +54,9 @@ void doSelectedTask(int selectedOption)
 		cout << "brak opcji w menu\n";
 		break;
 	}
-	
+
+	system("pause");
+
 	/*	if (selectedOption == 1)
 		{
 			SquareArea();
@@ -66,14 +70,17 @@ void doSelectedTask(int selectedOption)
 
 void mainProgram()
 {
-	//1. wyświetlenie menu
-	showMenu();
+	int selected;
+	do {
+		//1. wyświetlenie menu
+		showMenu();
 
-	//2. wybranie opcji przez użytkownika
-	int selected = chooseOptionFromUser();
+		//2. wybranie opcji przez użytkownika
+		selected = chooseOptionFromUser();
 
-	//3. wykonanie wybranego zadania
-	doSelectedTask(selected);
+		//3. wykonanie wybranego zadania
+		doSelectedTask(selected);
+	} while (selected != 0);
 }
 
 int main()
