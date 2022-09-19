@@ -8,6 +8,7 @@ void showMenu()
 	system("cls");
 	cout << "Menu: \n";
 	cout << "1. Pole kwadratu \n";
+	
 	cout << "2. Pole trojkata \n";
 	cout << "3. Liczby nieparzyste do 1 \n";
 	cout << "4. Ciag Fibonacciego \n";
