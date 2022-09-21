@@ -8,12 +8,13 @@ void showMenu()
 	system("cls");
 	cout << "Menu: \n";
 	cout << "1. Pole kwadratu \n";
-	
+
 	cout << "2. Pole trojkata \n";
 	cout << "3. Liczby nieparzyste do 1 \n";
 	cout << "4. Ciag Fibonacciego \n";
 	cout << "5. Dzielnik podanej liczby \n";
 	cout << "6. Liczba na wyraz \n";
+	cout << "7. dec na bin \n";
 	cout << "0. Zamknij program \n";
 }
 
@@ -90,10 +91,59 @@ void divisorOfNumber()
 
 void numberForWord()
 {
-	string slowa[10] = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-	int number;
-	cout << "podaj liczbe do zapisania jej slownie: \n";
-	cin >> number;
+	cout << "Podaj liczbe:\n";
+	int numberFromUser;
+	cin >> numberFromUser;
+
+	std::string arrayOfWordsNumbers[10] = { "zero", "jeden", "dwa", "trzy",
+											"cztery", "piec", "szesc",
+											"sieden", "osiem", "dziewiec" };
+
+	int number = numberFromUser;
+	do
+	{
+		int digit = number % 10;
+		number = number / 10;
+
+		cout << arrayOfWordsNumbers[digit] << " ";
+
+	} while (number != 0);
+	cout << "\n";
+
+	number = numberFromUser;
+	string stringNumber = "";
+
+	do
+	{
+		int digit = number % 10;
+		number = number / 10;
+
+		stringNumber = arrayOfWordsNumbers[digit] + " " + stringNumber;
+
+	} while (number != 0);
+
+	cout << stringNumber;
+	cout << "\n";
+}
+
+void decimalToBinary()
+{
+	int liczba;
+	cout << "Podaj liczbe: \n";
+	cin >> liczba;
+
+	int i = 31;
+	bool ok = false;
+	while (i--)
+	{
+		if (liczba >> i & 1 & !ok)
+			ok = true;
+
+		if (ok)
+			cout << ((liczba >> i) & 1);
+
+	}
+	cout << '\n';
 }
 
 void doSelectedTask(int selectedOption)
@@ -119,8 +169,12 @@ void doSelectedTask(int selectedOption)
 		break;
 	case 6:
 		numberForWord();
+		break;
+	case 7:
+		decimalToBinary();
+		break;
 	default:
-		cout << "brak opcji w menu\n";
+		cout << "brak opcji w menu \n";
 		break;
 	}
 
@@ -161,6 +215,11 @@ void mainProgram()
 
 		//napisz funkcje, która wczyta od użytkownika liczbe i wyświetli słownie poszczególne cyfry tej liczby
 		numberForWord();
+
+		//zamień liczbe w systemie decymalnym na binarny
+		decimalToBinary();
+
+		//
 	} while (selected != 0);
 }
 
