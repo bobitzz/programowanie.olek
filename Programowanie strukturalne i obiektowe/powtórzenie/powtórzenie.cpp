@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 
 using namespace std;
@@ -8,13 +9,13 @@ void showMenu()
 	system("cls");
 	cout << "Menu: \n";
 	cout << "1. Pole kwadratu \n";
-
 	cout << "2. Pole trojkata \n";
 	cout << "3. Liczby nieparzyste do 1 \n";
 	cout << "4. Ciag Fibonacciego \n";
 	cout << "5. Dzielnik podanej liczby \n";
 	cout << "6. Liczba na wyraz \n";
 	cout << "7. dec na bin \n";
+	cout << "8. reszta z zakupów \n";
 	cout << "0. Zamknij program \n";
 }
 
@@ -146,6 +147,60 @@ void decimalToBinary()
 	cout << '\n';
 }
 
+void decToOtherSystem()
+{
+	cout << "podaj liczbe(2-16): \n";
+	int liczba;
+	cin >> liczba;
+
+
+}
+
+void remnant()
+{
+	cout << "Podaj reszte \n";
+	int rest;
+	cin >> rest;
+
+	string denominations[9] = { "1", "2", "5", "10", "20", "50", "100", "200", "500" };
+	int P, i = 0;
+
+	while (rest > 0)
+	{
+		if (rest > denominations[i])
+		{
+			P = rest / denominations[i];
+			rest -= (denominations[i] * P);
+			cout << denominations[i] << "x" << P;
+		}
+		i++;
+	}
+
+	/*
+	int n;
+		cin >> n;
+		int t[n], i;
+		for (i = 0; i < n; i++)
+			cin >> t[i];
+
+		cout << "RESZTA = " << rest;
+
+		i = 0;
+
+		while (rest > 0)
+		{
+			while (rest >= t[i])
+			{
+				rest = rest - t[i];
+				cout << t[i];
+			}
+
+			i++;
+		}
+	*/
+
+}
+
 void doSelectedTask(int selectedOption)
 {
 	switch (selectedOption)
@@ -172,6 +227,9 @@ void doSelectedTask(int selectedOption)
 		break;
 	case 7:
 		decimalToBinary();
+		break;
+	case 8:
+		rename();
 		break;
 	default:
 		cout << "brak opcji w menu \n";
@@ -219,7 +277,9 @@ void mainProgram()
 		//zamień liczbe w systemie decymalnym na binarny
 		decimalToBinary();
 
-		//
+		//pobierz od uzytkownika kwote i wydaj mureszte z zakupow w największych nominałach
+		remnant();
+
 	} while (selected != 0);
 }
 
