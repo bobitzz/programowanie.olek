@@ -158,46 +158,6 @@ void decToOtherSystem()
 
 void remnant()
 {
-	cout << "Podaj reszte \n";
-	int rest;
-	cin >> rest;
-
-	string denominations[9] = { "1", "2", "5", "10", "20", "50", "100", "200", "500" };
-	int P, i = 0;
-
-	while (rest > 0)
-	{
-		if (rest > denominations[i])
-		{
-			P = rest / denominations[i];
-			rest -= (denominations[i] * P);
-			cout << denominations[i] << "x" << P;
-		}
-		i++;
-	}
-
-	/*
-	int n;
-		cin >> n;
-		int t[n], i;
-		for (i = 0; i < n; i++)
-			cin >> t[i];
-
-		cout << "RESZTA = " << rest;
-
-		i = 0;
-
-		while (rest > 0)
-		{
-			while (rest >= t[i])
-			{
-				rest = rest - t[i];
-				cout << t[i];
-			}
-
-			i++;
-		}
-	*/
 
 }
 
@@ -229,7 +189,7 @@ void doSelectedTask(int selectedOption)
 		decimalToBinary();
 		break;
 	case 8:
-		rename();
+		remnant();
 		break;
 	default:
 		cout << "brak opcji w menu \n";
