@@ -3,6 +3,12 @@
 
 using namespace std;
 
+struct Point
+{
+    int x;
+    int y;
+};
+
 double calculateDistance(int a, int b)
 {
     return sqrt(a * a + b * b);
@@ -12,6 +18,7 @@ void CoordinateTestVersion1()
 {
     int x, y;
 
+    //Point point;
     cout << "Podaj x:\n";
     cin >> x;
 
@@ -24,7 +31,23 @@ void CoordinateTestVersion1()
     cout << "Odleglosc od zera wynosi: " << distance << '\n';
 }
 
+void CoordinateTestVersion2()
+{
+    Point userPoint;
+    cout << "Podaj x:\n";
+    cin >> userPoint.x;
+
+    cout << "Podaj y:\n";
+    cin >> userPoint.y;
+
+    double distance = calculateDistance(userPoint.x, userPoint.y);
+    //distance = sqrt(x * x + y * y);
+
+    cout << "Odleglosc od zera wynosi: " << distance << '\n';
+}
+
 int main()
 {
-    CoordinateTestVersion1();
+    //CoordinateTestVersion1();
+    CoordinateTestVersion2();
 }
