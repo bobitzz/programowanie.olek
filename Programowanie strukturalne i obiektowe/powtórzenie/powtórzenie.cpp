@@ -241,6 +241,8 @@ void mainProgram()
 		remnant();
 
 	} while (selected != 0);
+	if (selected = 0)
+		exit;
 }
 
 int main()
