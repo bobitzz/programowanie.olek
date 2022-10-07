@@ -7,11 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Treść zadań", "Treść z
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Treści zadań", "0. Treści zadań", "{1D9152DC-3916-4267-8618-BDBB776AF330}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Podstawy programowania", "1. Podstawy programowania", "{5219D71D-C2E7-4327-8887-395646D84B2A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Podstawy programowania", "01. Podstawy programowania", "{5219D71D-C2E7-4327-8887-395646D84B2A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Podstawy programowania", "Podstawy programowania\Podstawy programowania.vcxproj", "{574655A8-6396-42CF-A03E-50A28749F221}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Instrukcja warunkowe", "2. Instrukcja warunkowe", "{D06B56EF-0F91-4942-9BBA-0E943D9DC996}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Instrukcja warunkowe", "02. Instrukcja warunkowe", "{D06B56EF-0F91-4942-9BBA-0E943D9DC996}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Instrukcja IF", "Instrukcja IF\Instrukcja IF.vcxproj", "{EB4BDB4C-9727-4498-99C9-F9865D3EA9A5}"
 EndProject
@@ -23,35 +23,39 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Instrukcja FOR", "Instrukcj
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Instrukcja SWITCH", "Instrukcja SWITCH\Instrukcja SWITCH.vcxproj", "{245A9F3B-AAF1-4014-A632-0222B74012AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Łańcuchy znaków", "3. Łańcuchy znaków", "{9FC189B0-BE2F-4E7D-84C8-849BA3F300E6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Łańcuchy znaków", "03. Łańcuchy znaków", "{9FC189B0-BE2F-4E7D-84C8-849BA3F300E6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Typ Char", "Typ Char\Typ Char.vcxproj", "{31AA7405-1731-48A8-AFDE-EE16E347B03A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Funkcje", "4. Funkcje", "{6CAA5402-20B2-4AC5-9EB0-FA0116FDE3C8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Funkcje", "04. Funkcje", "{6CAA5402-20B2-4AC5-9EB0-FA0116FDE3C8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Funkcje", "Funkcje\Funkcje.vcxproj", "{2E98D979-5954-433F-B0B5-09938A548CC6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Typ string", "Typ string\Typ string.vcxproj", "{623DEB57-3BD3-4299-8599-F9AE83480BFF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Algorytmy wyszukiwania", "5. Algorytmy wyszukiwania", "{87FC65B3-E5CA-45A8-B5B9-5544965123DB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Algorytmy wyszukiwania", "05. Algorytmy wyszukiwania", "{87FC65B3-E5CA-45A8-B5B9-5544965123DB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Algorytmy wyszukiwania", "Algorytmy wyszukiwania\Algorytmy wyszukiwania.vcxproj", "{373539EF-8E53-46F0-82DD-044487242382}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Kolekcje", "6. Kolekcje", "{60F98016-89CB-417F-9BBA-4F868AE7A447}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Kolekcje", "06. Kolekcje", "{60F98016-89CB-417F-9BBA-4F868AE7A447}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tablice", "Tablice\Tablice.vcxproj", "{0B5109FD-6DDF-4A44-9C88-13D58D4DB800}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Powtorzenie", "7. Powtorzenie", "{27BA530F-9C88-4F9B-973F-2E90512AB6C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Powtorzenie", "07. Powtorzenie", "{27BA530F-9C88-4F9B-973F-2E90512AB6C9}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "powtórzenie", "powtórzenie\powtórzenie.vcxproj", "{7F3A9EDD-C339-4422-A315-EB3979F1C6C3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Struktury", "8. Struktury", "{8AC16452-E258-4A77-B01E-C7B8C15DDEE7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08. Struktury", "08. Struktury", "{8AC16452-E258-4A77-B01E-C7B8C15DDEE7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoordinatesProgram", "CoordinatesProgram\CoordinatesProgram.vcxproj", "{8A4402DF-C268-4B58-B441-B7916538621F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9. Wskaźniki", "9. Wskaźniki", "{B3A306FB-4F14-41EF-B298-88F4D558D7BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. Wskaźniki", "09. Wskaźniki", "{B3A306FB-4F14-41EF-B298-88F4D558D7BE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PointersApp", "PointersApp\PointersApp.vcxproj", "{62ABF696-83F9-4EAB-9F68-FE2374A9FA04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Podstawy obiektów", "10. Podstawy obiektów", "{00E63EFD-3E91-4191-ACD2-C9C835C2EB8B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstObjectProgram", "FirstObjectProgram\FirstObjectProgram.vcxproj", "{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +184,14 @@ Global
 		{62ABF696-83F9-4EAB-9F68-FE2374A9FA04}.Release|x64.Build.0 = Release|x64
 		{62ABF696-83F9-4EAB-9F68-FE2374A9FA04}.Release|x86.ActiveCfg = Release|Win32
 		{62ABF696-83F9-4EAB-9F68-FE2374A9FA04}.Release|x86.Build.0 = Release|Win32
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Debug|x64.ActiveCfg = Debug|x64
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Debug|x64.Build.0 = Debug|x64
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Debug|x86.ActiveCfg = Debug|Win32
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Debug|x86.Build.0 = Debug|Win32
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Release|x64.ActiveCfg = Release|x64
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Release|x64.Build.0 = Release|x64
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Release|x86.ActiveCfg = Release|Win32
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,6 +212,7 @@ Global
 		{7F3A9EDD-C339-4422-A315-EB3979F1C6C3} = {27BA530F-9C88-4F9B-973F-2E90512AB6C9}
 		{8A4402DF-C268-4B58-B441-B7916538621F} = {8AC16452-E258-4A77-B01E-C7B8C15DDEE7}
 		{62ABF696-83F9-4EAB-9F68-FE2374A9FA04} = {B3A306FB-4F14-41EF-B298-88F4D558D7BE}
+		{5D2F13DA-6147-4132-9EB4-90A2BF3BA75A} = {00E63EFD-3E91-4191-ACD2-C9C835C2EB8B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76EC34DF-6BC3-4283-8128-050FEAB28534}
