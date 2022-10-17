@@ -15,6 +15,8 @@ public:
         this->name = name;
         cordinateGPS.x = 0;
         cordinateGPS.y = 0;
+        directionX = 1;
+        directionY = 0;
     }
 
     Car(string name, int x, int y)
@@ -22,6 +24,8 @@ public:
         this->name = name;
         cordinateGPS.x = x;
         cordinateGPS.y = y;
+        directionX = 1;
+        directionY = 0;
     }
 
     void ShowInfo() 
@@ -34,7 +38,8 @@ public:
 
     void moveForward()
     {
-
+        cordinateGPS.x += directionX;
+        cordinateGPS.y += directionY;
     }
 
 protected:
@@ -43,6 +48,8 @@ private:
     string name;
 
     CordinateGPS cordinateGPS;
+
+    int directionX, directionY;
 };
 
 int main()
@@ -54,4 +61,7 @@ int main()
 
     carFirst.ShowInfo();
     carSecond.ShowInfo();
+
+    carFirst.moveForward();
+    carSecond.moveForward();
 }
