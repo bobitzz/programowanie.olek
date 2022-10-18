@@ -15,6 +15,9 @@ struct Direction
 class Car
 {
 public:
+
+#pragma region Konstruktory
+
 	Car(string name)
 	{
 		this->name = name;
@@ -33,6 +36,8 @@ public:
 		direction.y = 0;
 	}
 
+#pragma endregion
+
 	void ShowInfo()
 	{
 		cout << "**************************\n";
@@ -46,6 +51,8 @@ public:
 		cordinateGPS.x += direction.x;
 		cordinateGPS.y += direction.y;
 	}
+
+#pragma region Turn method
 
 	void turnLeft()
 	{
@@ -84,14 +91,28 @@ public:
 		direction.y = tmX;
 	}
 
+	void turnBack()
+	{
+		turnRight();
+		turnRight();
+	}
+
+#pragma endregion
+
 protected:
 
 private:
+
+#pragma region Definicje
+
 	string name;
 
 	CordinateGPS cordinateGPS;
 
 	Direction direction;
+
+#pragma endregion
+
 };
 
 int main()
@@ -102,8 +123,11 @@ int main()
 	Car carSecond("Lodówa", 10, 10);
 
 	carFirst.ShowInfo();
-	carSecond.ShowInfo();
+	//carSecond.ShowInfo();
 
 	carFirst.moveForward();
-	carSecond.moveForward();
+	carFirst.turnLeft();
+	carFirst.moveForward();
+
+	carFirst.ShowInfo();
 }
