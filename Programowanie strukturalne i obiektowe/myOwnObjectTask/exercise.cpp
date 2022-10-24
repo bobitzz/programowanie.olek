@@ -14,18 +14,10 @@ napisaæ klasê (oraz kod testuj¹cy) opisuj¹cy osobê.
 
 using namespace std;
 
-int yearNow()
-{
-	time_t now = time(0);
-	tm* ltm = new tm;
-	localtime_s(ltm, &now);
-	return 1900 + ltm->tm_year;
-}
-
 struct Information
 {
 	string name, surname, gender, city;
-	int yearOfBirthday = yearNow();
+	int yearOfBirthday;
 };
 
 class Person
@@ -65,6 +57,15 @@ public:
 		this->Personality.yearOfBirthday = yearOfBirthday;
 	}
 
+	Person(string name, string surname, string gender, string city)
+	{
+		this->Personality.name = name;
+		this->Personality.surname = surname;
+		this->Personality.gender = gender;
+		this->Personality.city = city;
+		this->Personality.yearOfBirthday = currentTime;
+	}
+
 	void ShowInfo(bool adult)
 	{
 		cout << "****************\n";
@@ -91,5 +92,8 @@ int main(bool adult)
 	setlocale(LC_CTYPE, "polish");
 
 	Person person1("Marek", "Wójcik", "Mê¿czyzna", "Kraków", 1997);
+	Person person2("Karolina", "Nowak", "Kobieta", "Wroc³aw");
+	
 	person1.ShowInfo(adult);
+	person2.ShowInfo(adult);
 }
