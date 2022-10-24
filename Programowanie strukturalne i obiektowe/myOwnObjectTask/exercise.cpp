@@ -31,21 +31,20 @@ public:
 		return 1900 + ltm->tm_year;
 	}
 
-	int moreThan18(bool adult)
+	void moreThan18()
 	{
+		bool adult;
 		if ((currentTime() - Personality.yearOfBirthday) > 18)
 			adult = true;
 		else
 			adult = false;
 
-		/*
-			if (adult == 1)
-				cout << "yes";
-			else if (adult == 0)
-				cout << "no";
-		*/
-
-		return adult;
+		cout << " Adult: ";
+		if (adult == 1)
+			cout << "yes" << "\n";
+		else if (adult == 0)
+			cout << "no" << "\n";
+		cout << "\n";
 	}
 
 	Person(string name, string surname, string gender, string city, int yearOfBirthday)
@@ -63,10 +62,10 @@ public:
 		this->Personality.surname = surname;
 		this->Personality.gender = gender;
 		this->Personality.city = city;
-		this->Personality.yearOfBirthday = currentTime;
+		this->Personality.yearOfBirthday = currentTime();
 	}
 
-	void ShowInfo(bool adult)
+	void ShowInfo()
 	{
 		cout << "****************\n";
 		cout << "Name: " << Personality.name << '\n';
@@ -75,11 +74,6 @@ public:
 		cout << "City: " << Personality.city << '\n';
 		cout << "Year of birthday: " << Personality.yearOfBirthday << '\n';
 		cout << "Age: " << (currentTime() - Personality.yearOfBirthday) << '\n';
-		cout << "Adult: " << moreThan18(adult);
-		if (moreThan18(adult) == 1)
-			cout << ". Yes" << '\n';
-		else if (moreThan18(adult) == 0)
-			cout << ". No" << '\n';
 		cout << "****************\n";
 	}
 
@@ -87,13 +81,16 @@ private:
 	Information Personality;
 };
 
-int main(bool adult)
+int main()
 {
 	setlocale(LC_CTYPE, "polish");
 
 	Person person1("Marek", "Wójcik", "Mê¿czyzna", "Kraków", 1997);
 	Person person2("Karolina", "Nowak", "Kobieta", "Wroc³aw");
-	
-	person1.ShowInfo(adult);
-	person2.ShowInfo(adult);
+
+	person1.ShowInfo();
+	person1.moreThan18();
+
+	person2.ShowInfo();
+	person2.moreThan18();
 }
