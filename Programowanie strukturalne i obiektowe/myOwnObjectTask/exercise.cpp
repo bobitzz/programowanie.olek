@@ -47,6 +47,7 @@ public:
 		cout << "\n";
 	}
 
+	#pragma region Konstruktory
 	Person(string name, string surname, string gender, string city, int yearOfBirthday)
 	{
 		this->Personality.name = name;
@@ -64,6 +65,7 @@ public:
 		this->Personality.city = city;
 		this->Personality.yearOfBirthday = currentTime();
 	}
+	#pragma endregion
 
 	void ShowInfo()
 	{
