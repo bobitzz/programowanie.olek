@@ -135,14 +135,13 @@ void decimalToBinary()
 
 	int i = 31;
 	bool ok = false;
+
 	while (i--)
 	{
 		if (liczba >> i & 1 & !ok)
 			ok = true;
-
 		if (ok)
 			cout << ((liczba >> i) & 1);
-
 	}
 	cout << '\n';
 }
