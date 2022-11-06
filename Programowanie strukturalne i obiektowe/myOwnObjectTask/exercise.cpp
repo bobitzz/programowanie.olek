@@ -23,14 +23,6 @@ struct Information
 class Person
 {
 public:
-	int currentTime()
-	{
-		time_t now = time(0);
-		tm* ltm = new tm;
-		localtime_s(ltm, &now);
-		return 1900 + ltm->tm_year;
-	}
-
 	void moreThan18()
 	{
 		bool adult;
@@ -81,6 +73,13 @@ public:
 
 private:
 	Information Personality;
+	int currentTime()
+	{
+		time_t now = time(0);
+		tm* ltm = new tm;
+		localtime_s(ltm, &now);
+		return 1900 + ltm->tm_year;
+	}
 };
 
 int main()

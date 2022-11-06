@@ -96,9 +96,7 @@ void numberForWord()
 	int numberFromUser;
 	cin >> numberFromUser;
 
-	std::string arrayOfWordsNumbers[10] = { "zero", "jeden", "dwa", "trzy",
-											"cztery", "piec", "szesc",
-											"sieden", "osiem", "dziewiec" };
+	std::string arrayOfWordsNumbers[10] = { "zero", "jeden", "dwa", "trzy", "cztery", "piec", "szesc", "sieden", "osiem", "dziewiec" };
 
 	int number = numberFromUser;
 	do

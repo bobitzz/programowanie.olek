@@ -29,7 +29,7 @@ int main()
 	
 	/*
 	Stos - obszar pamiêci ram przydzielony naszem programowi.
-	Obszar ten jest ograniczony i nie da siê go zwiêkszyæ w czsie
+	Obszar ten jest ograniczony i nie da siê go zwiêkszyæ w czasie
 	dzia³ania programu. L¹duj¹ tam zmienna lokalne.
 	*/
 
