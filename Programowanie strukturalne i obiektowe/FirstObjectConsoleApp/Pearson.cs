@@ -6,23 +6,31 @@ using System.Threading.Tasks;
 
 namespace FirstObjectConsoleApp
 {
-    class Pearson
+    class Person
     {
         string name, surname;
         int age;
 
-        public Pearson()
+        public Person()
         {
             name = "Jan";
             surname = "Nieznany";
             age = 21;
         }
 
-        public Pearson(string name, string surname, int age)
+        public Person(string name, string surname, int age)
         {
             this.name = name;
             this.surname = surname;
             this.age = age;
+        }
+
+        public void ShowInfo()
+        {
+            Console.WriteLine("Informacje o osobie: ");
+            Console.WriteLine($"Imie: {name}");
+            Console.WriteLine($"Nazwisko: {surname}");
+            Console.WriteLine($"Wiek: {age}");
         }
     }
 }
