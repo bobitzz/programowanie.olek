@@ -25,8 +25,12 @@ namespace FirstConsoleApp
             Console.WriteLine("c:/Folder1/Folder2/plik.txt");
 
             // <, >, <=, >=, ==, !=
+            if (number == 5)
+                Console.WriteLine("Równe");
+            else
+                Console.WriteLine("Nie równe");
 
-            double number2 = number;
+            var number2 = number + 6.0 + "dfsg";
         }
     }
 }
