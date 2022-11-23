@@ -1,5 +1,9 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
 namespace CollectionConsoleApp
 {
     class TestCollection
@@ -70,10 +74,59 @@ namespace CollectionConsoleApp
             }
             Console.WriteLine("\n" + "najwieksza liczba to: " + max);
         }
-    }
 
-    class Number
-    {
-        public int ourNumber;
+        public void TestGeneric()
+        {
+            Number[] numbers = new Number[5];
+            NumberFloat[] floatNumbers = new NumberFloat[5];
+            NumberDouble[] doubleNumbers = new NumberDouble[5];
+
+            NumberGeneric<int>[] intGenericNumber = new NumberGeneric<int>[5];
+            //intGenericNumber.ourNumber = 7;
+
+            NumberGeneric<int>[] intGenericNumbers = new NumberGeneric<int>[5];
+            NumberGeneric<float>[] floatGenericNumbers = new NumberGeneric<float>[5];
+            NumberGeneric<double>[] doubleGenericNumbers = new NumberGeneric<double>[5];
+            NumberGeneric<byte>[] byteGenericNumbers = new NumberGeneric<byte>[5];
+
+            byteGenericNumbers[2].ourNumber = 7;
+        }
+
+        public void ListCollection()
+        {
+            //int[] tab = mew int[10];
+            List<int> listOfInts = new List<int>();
+            Console.WriteLine("Kolekcja elementów: " + listOfInts.Count);
+            listOfInts.Add(5);
+            Console.WriteLine("Kolekcja elementów: " + listOfInts.Count);
+            Console.WriteLine("Zerowy element kolekcji: " + listOfInts[0]);
+            listOfInts.Add(2137);
+            Console.WriteLine("Pierwszy element kolekcji: " + listOfInts[1]);
+        }
     }
+}
+
+class Number
+{
+    public int ourNumber;
+}
+
+class NumberFloat
+{
+    public float ourNumber;
+}
+
+class NumberDouble
+{
+    public double ourNumber;
+}
+
+class Number<T>
+{
+    public T ourNumber;
+}
+
+class NumberGeneric<T>
+{
+    public T ourNumber;
 }

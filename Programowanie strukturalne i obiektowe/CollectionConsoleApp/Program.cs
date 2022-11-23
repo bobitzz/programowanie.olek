@@ -8,7 +8,8 @@ namespace CollectionConsoleApp
         {
             TestCollection testCollection = new TestCollection();
             //testCollection.TestArrayCollection();
-            testCollection.TestObjectArrayCollection();
+            //testCollection.TestObjectArrayCollection();
+            testCollection.ListCollection();
         }
     }
 }
