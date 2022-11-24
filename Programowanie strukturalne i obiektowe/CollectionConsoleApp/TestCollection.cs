@@ -101,7 +101,7 @@ namespace CollectionConsoleApp
             Console.WriteLine("Kolekcja elementów: " + listOfInts.Count);
             Console.WriteLine("Zerowy element kolekcji: " + listOfInts[0]);
             listOfInts.Add(2137);
-            Console.WriteLine("Pierwszy element kolekcji: " + listOfInts[1]);
+            Console.WriteLine("Pierwszy element kolekcji: " + listOfInts[1]); 
         }
     }
 }
