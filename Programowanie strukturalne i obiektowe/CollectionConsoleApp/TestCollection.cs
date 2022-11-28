@@ -101,7 +101,22 @@ namespace CollectionConsoleApp
             Console.WriteLine("Kolekcja elementów: " + listOfInts.Count);
             Console.WriteLine("Zerowy element kolekcji: " + listOfInts[0]);
             listOfInts.Add(2137);
-            Console.WriteLine("Pierwszy element kolekcji: " + listOfInts[1]); 
+            Console.WriteLine("Pierwszy element kolekcji: " + listOfInts[1]);
+
+            for (int i = 0; i < listOfInts.Count; i++)
+            {
+                listOfInts.Add(new Random().Next(1, 100));
+            }
+
+            for (int i = 0; i < listOfInts.Count; i++)
+            {
+                //listOfInts[i] = 2;
+            }
+
+            foreach (int item in listOfInts)
+            {
+                Console.WriteLine("Element: " + item);
+            }
         }
     }
 }
