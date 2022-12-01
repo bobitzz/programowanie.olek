@@ -25,7 +25,7 @@ namespace CollectionConsoleApp
             Console.WriteLine("\b");
 
             //int MaxNumberFromInts = MaxFromInts(ListOfInts);
-            int MaxNumber = MaxFromAllTypes<int>(ListOfInts);
+            int MaxNumber = MaxFromAllTypes<int>(ListOfInts, CheckInt);
             Console.WriteLine("Max from ints: " + MaxNumber);
 
             List<double> ListOfDouble = new List<double>();
@@ -37,14 +37,14 @@ namespace CollectionConsoleApp
                 ListOfDouble.Add(number);
             }
             Console.WriteLine("Lista doubl'ów: ");
-            foreach (int element in ListOfDouble)
+            foreach (double element in ListOfDouble)
             {
                 Console.Write(element + ", ");
             }
             Console.WriteLine("\b");
 
             //double MaxNumberFromDoubles = MaxFromDoubles(ListOfDouble);
-            double MaxNumberFromDoubles = MaxFromAllTypes<double>(ListOfDouble);
+            double MaxNumberFromDoubles = MaxFromAllTypes<double>(ListOfDouble, CheckDouble);
             Console.WriteLine("Max from doubles: " + MaxNumberFromDoubles);
         }
 
@@ -70,15 +70,52 @@ namespace CollectionConsoleApp
             return MaxFromDoubles;
         }
 
-        private T MaxFromAllTypes<T>(List<T> list)
+        private T MaxFromAllTypes<T>(List<T> list, Func<T, T, bool> check)
         {
             T MaxNumber = list[0];
-            foreach (T element in list)
+            foreach (T item in list)
             {
-                if (element > MaxNumber)
-                    MaxNumber = element;
+                if (check(item, MaxNumber))
+                    MaxNumber = item;
+
+                /*
+                if(item is int)
+                {
+                    if (CheckInt(int.Parse(item.ToString()), int.Parse(MaxNumber.ToString())))
+                        MaxNumber = item;
+                }
+                if (item is double)
+                {
+                    if (CheckDouble(double.Parse(item.ToString()), double.Parse(MaxNumber.ToString())))
+                        MaxNumber = item;
+                }
+                */
+                /*
+                if (item is Person)
+                {
+                    if (CheckPerson(item as Person, max as Person)
+                            MaxNumber = item;
+                }
+                */
             }
             return MaxNumber;
         }
+
+        private bool CheckInt(int firstNumber, int secondNumber)
+        {
+            return firstNumber > secondNumber;
+        }
+
+        private bool CheckDouble(double firstNumber, double secondNumber)
+        {
+            return firstNumber > secondNumber;
+        }
+
+        /*
+        private Person CheckPerson(Person firstPerson, secondPerson)
+        {
+            return firstPerson.age > secondPerson.age;
+        }
+        */
     }
 }
