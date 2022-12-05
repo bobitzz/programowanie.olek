@@ -24,6 +24,15 @@ namespace CollectionConsoleApp
             }
             Console.WriteLine("\b");
 
+            //int max = MaxFromInts(ListOfInts);
+            //int max = MaxFromAllTypes<int>(ListOfInts, CheckInt);
+            int maxFromInts = MaxFromAllTypes<int>(ListOfInts,
+                (int firstNumber, int secondNumber) =>
+                {
+                return firstNumber > secondNumber;
+                });
+            Console.WriteLine("Max from ints: " + maxFromInts);
+
             //int MaxNumberFromInts = MaxFromInts(ListOfInts);
             int MaxNumber = MaxFromAllTypes<int>(ListOfInts, CheckInt);
             Console.WriteLine("Max from ints: " + MaxNumber);
@@ -46,6 +55,10 @@ namespace CollectionConsoleApp
             //double MaxNumberFromDoubles = MaxFromDoubles(ListOfDouble);
             double MaxNumberFromDoubles = MaxFromAllTypes<double>(ListOfDouble, CheckDouble);
             Console.WriteLine("Max from doubles: " + MaxNumberFromDoubles);
+
+            double maxFromDouble2 = MaxFromAllTypes<double>(ListOfDouble,
+                (double firstNumber, double secondNumber) => firstNumber > secondNumber);
+            Console.WriteLine("Max from ints: " + maxFromDouble2);
         }
 
         private int MaxFromInts(List<int> list)
