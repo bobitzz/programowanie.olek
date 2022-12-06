@@ -33,8 +33,17 @@ namespace CollectionConsoleApp
                 });
             Console.WriteLine("Max from ints: " + maxFromInts);
 
-            List<int> newListOfInts = GetNewCollection<int>(ListOfInts, x => { return x > 5; });
+            List<int> newListOfInts = GetNewCollection<int>(ListOfInts, x => x > 5);
             Console.WriteLine("Lista intow wiekszych od 5: ");
+            foreach (int item in newListOfInts)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
+
+            newListOfInts = GetNewCollection<int>(ListOfInts, x => x % 2 == 0);
+            newListOfInts = ListOfInts.Where(x => x % 2 == 0).ToList();
+            Console.WriteLine("Lista intow parzystych: ");
             foreach (int item in newListOfInts)
             {
                 Console.Write(item + ", ");
