@@ -33,6 +33,14 @@ namespace CollectionConsoleApp
                 });
             Console.WriteLine("Max from ints: " + maxFromInts);
 
+            List<int> newListOfInts = GetNewCollection<int>(ListOfInts, x => { return x > 5; });
+            Console.WriteLine("Lista intow wiekszych od 5: ");
+            foreach (int item in newListOfInts)
+            {
+                Console.Write(item + ", ");
+            }
+            Console.WriteLine();
+
             //int MaxNumberFromInts = MaxFromInts(ListOfInts);
             int MaxNumber = MaxFromAllTypes<int>(ListOfInts, CheckInt);
             Console.WriteLine("Max from ints: " + MaxNumber);
@@ -113,6 +121,30 @@ namespace CollectionConsoleApp
             }
             return MaxNumber;
         }
+
+        public List<T> GetNewCollection<T>(List<T> list, Func<T, bool> check)
+        {
+            List<T> newCollection = new List<T>();
+            foreach (T item in list)
+            {
+                if (check(item))
+                    newCollection.Add(item);
+            }
+            return newCollection;
+        }
+
+        /*
+        public List<int> moreThen(List<int> list)
+        {
+            List<int> newCollection = new List<int>();
+            foreach (int item in list)
+            {
+                if (item >= 5)
+                    newCollection.Add(item);
+            }
+            return newCollection;
+        }
+        */
 
         private bool CheckInt(int firstNumber, int secondNumber)
         {
