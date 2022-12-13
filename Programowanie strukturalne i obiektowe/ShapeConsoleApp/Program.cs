@@ -12,6 +12,9 @@ namespace ShapeConsoleApp
 
             Rectangle secondRectangle = new Rectangle(54, 99);
             secondRectangle.ShowInfo();
+
+            Square firstSqure = new();
+            firstSqure.ShowInfo();
         }
     }
 }

@@ -8,8 +8,7 @@ namespace ShapeConsoleApp.Shapes
 {
     class Rectangle
     {
-        private double sideA;
-        private double sideB;
+        protected double sideA, sideB;
 
         public Rectangle()
         {
@@ -40,6 +39,7 @@ namespace ShapeConsoleApp.Shapes
             Console.WriteLine("Bok b = " + sideB);
             Console.WriteLine("Pole " + Area());
             Console.WriteLine("Obwód " + Perimeter());
+            Console.WriteLine();
         }
     }
 }
