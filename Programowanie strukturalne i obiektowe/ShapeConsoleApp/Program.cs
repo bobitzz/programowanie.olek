@@ -7,13 +7,13 @@ namespace ShapeConsoleApp
     {
         static void Main(string[] args)
         {
-            Rectangle rectangle = new();
+            Rectangle rectangle = new("Prostokąt 1");
             rectangle.ShowInfo();
 
-            Rectangle secondRectangle = new Rectangle(54, 99);
+            Rectangle secondRectangle = new("Prostokąt 2", 54, 99);
             secondRectangle.ShowInfo();
 
-            Square firstSqure = new();
+            Square firstSqure = new("Kwadrat ");
             firstSqure.ShowInfo();
         }
     }
