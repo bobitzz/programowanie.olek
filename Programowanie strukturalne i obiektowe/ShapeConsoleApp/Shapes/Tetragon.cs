@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace ShapeConsoleApp.Shapes
 {
-    class Tetragon
+    class Tetragon //: Object
     {
         protected double sideA, sideB, sideC, sideD;
         protected string name;
+        private string ddd;
 
         public Tetragon(string name, double sideA, double sideB, double sideC, double sideD)
         {
