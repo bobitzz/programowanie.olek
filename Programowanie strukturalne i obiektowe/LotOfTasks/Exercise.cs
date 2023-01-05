@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LotOfTasks
 {
@@ -294,7 +290,7 @@ namespace LotOfTasks
 
             if (String.IsNullOrEmpty(word))
                 Console.WriteLine("Wyraz \"" + word + "\" nie jest palindromem");
-            for (int i = 0; i < length / 2; i++)
+            for (int i = 0; i < length / 2;)
             {
                 if (word[i] != word[length - i - 1])
                 {
@@ -303,12 +299,13 @@ namespace LotOfTasks
                 }
                 else
                 {
-                    Console.WriteLine("Wyraz " + word + " jest palindromem");
+                    Console.WriteLine("Wyraz \"" + word + "\" jest palindromem");
                     break;
                 }
             }
         }
 
+        /*
         public void Exercise19()
         {
             Console.WriteLine("Podaj wyraz do sprawdzenia: ");
@@ -328,6 +325,105 @@ namespace LotOfTasks
                 return true;
             }
             IsAnagram(word, word2);
+        }
+        */
+
+        public void Exercise20()
+        {
+            Console.WriteLine("Podaj liczbę: ");
+            int number = int.Parse(Console.ReadLine());
+            int reserveNumber = number;
+            int numberLength = number.ToString().Length;
+            int amountOfDivider = 1;
+
+            if (reserveNumber < 2)
+                Console.WriteLine("nie jest to liczba doskonała");
+            else
+            {
+                for (int i = 2; i <= Math.Sqrt(reserveNumber); i++)
+                {
+                    if (reserveNumber % i == 0)
+                    {
+                        amountOfDivider += reserveNumber;
+                    }
+                }
+            }
+            if (number != amountOfDivider)
+                Console.WriteLine("liczba " + number + " nie jest doskonała");
+            else
+                Console.WriteLine("liczba " + number + " jest doskonała");
+
+        }
+
+        public void Exercise20v2()
+        {
+            Console.WriteLine("Podaj liczbę: ");
+            int number = int.Parse(Console.ReadLine());
+            int numberLength = number.ToString().Length;
+
+            int amountOfDivider = 1;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    amountOfDivider += i + number / i;
+            }
+
+            if (number == numberLength)
+                amountOfDivider -= numberLength;
+
+            if (number == amountOfDivider)
+                Console.WriteLine("jest to liczba doskonała");
+            else
+                Console.WriteLine("nie jest to liczba doskonała ");
+        }
+        #endregion
+
+        #region Pętla for
+        public void Exercise21()
+        {
+            for (int i = 1; i <= 10; i++)
+                Console.Write(i + ", ");
+        }
+
+        public void Exercise22()
+        {
+            for (int i = 1; i <= 100; i++)
+                Console.WriteLine("100 + " + i + " = " + (100 + i));
+        }
+
+        public void Exercise23()
+        {
+            for (int i = 1; i <= 10; i++)
+                Console.WriteLine("Kwadrat liczby " + i + " wynosi: " + Math.Pow(i, 2));
+        }
+
+        public void Exercise24()
+        {
+            for (int liczba = 1; liczba <= 10; liczba++)
+            {
+                int aktualnyIloczyn = liczba;
+                for (int i = 1; i < liczba; i++)
+                {
+                    aktualnyIloczyn *= i;
+                }
+                Console.WriteLine(liczba + "! = " + aktualnyIloczyn);
+            }
+        }
+
+        public void Exercise25()
+        {
+            for (int multiplicand = 1; multiplicand <= 9; multiplicand++)
+                for (int multiplier = 1; multiplier <= 9; multiplier++)
+                    Console.WriteLine(multiplicand + " * " + multiplier + " = " + (multiplicand * multiplier));
+        }
+
+        public void Exercise26()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                if(i % 3 == 0)
+                    Console.Write(i + ", ");
+            }
         }
         #endregion
     }
