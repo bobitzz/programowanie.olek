@@ -259,10 +259,75 @@ namespace LotOfTasks
             Console.WriteLine("Podaj temperature: ");
             float temperature = float.Parse(Console.ReadLine());
 
-            if(temperature >= 20)
+            if (temperature >= 20)
                 Console.WriteLine("ciepło");
             else
                 Console.WriteLine("zimno");
+        }
+        #endregion
+
+        #region Pętle
+        public void Exercise17()
+        {
+            Console.WriteLine("Podaj liczbę: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (number < 2)
+                Console.WriteLine("nie jest to liczba pierwsza");
+            else
+            {
+                for (int i = 2; i <= Math.Sqrt(number); i++)
+                {
+                    if (number % i == 0)
+                        Console.WriteLine("nie jest to liczba pierwsza");
+                    else
+                        Console.WriteLine("to jest liczba pierwsza");
+                }
+            }
+        }
+
+        public void Exercise18()
+        {
+            Console.WriteLine("Podaj wyraz do sprawdzenia: ");
+            string word = Console.ReadLine();
+            int length = word.Length;
+
+            if (String.IsNullOrEmpty(word))
+                Console.WriteLine("Wyraz \"" + word + "\" nie jest palindromem");
+            for (int i = 0; i < length / 2; i++)
+            {
+                if (word[i] != word[length - i - 1])
+                {
+                    Console.WriteLine("Wyraz \"" + word + "\" nie jest palindromem");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Wyraz " + word + " jest palindromem");
+                    break;
+                }
+            }
+        }
+
+        public void Exercise19()
+        {
+            Console.WriteLine("Podaj wyraz do sprawdzenia: ");
+            string word = Console.ReadLine();
+            Console.WriteLine("Podaj wyraz do sprawdzenia: ");
+            string word2 = Console.ReadLine();
+
+            bool IsAnagram(string word, string word2)
+            {
+                if (word.Length != word2.Length)
+                    return false;
+                List<char> list1 = word.ToList();
+                List<char> list2 = word2.ToList();
+                for (int i = 0; i < word.Length; i++)
+                    if (!list2.Remove(list1[i])) 
+                        return false;
+                return true;
+            }
+            IsAnagram(word, word2);
         }
         #endregion
     }
