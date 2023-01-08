@@ -399,14 +399,14 @@ namespace LotOfTasks
 
         public void Exercise24()
         {
-            for (int liczba = 1; liczba <= 10; liczba++)
+            for (int number = 1; number <= 10; number++)
             {
-                int aktualnyIloczyn = liczba;
-                for (int i = 1; i < liczba; i++)
+                int aktualnyIloczyn = number;
+                for (int i = 1; i < number; i++)
                 {
                     aktualnyIloczyn *= i;
                 }
-                Console.WriteLine(liczba + "! = " + aktualnyIloczyn);
+                Console.WriteLine(number + "! = " + aktualnyIloczyn);
             }
         }
 
@@ -421,9 +421,136 @@ namespace LotOfTasks
         {
             for (int i = 1; i <= 100; i++)
             {
-                if(i % 3 == 0)
+                if (i % 3 == 0)
                     Console.Write(i + ", ");
             }
+        }
+
+        public void Exercise27()
+        {
+            int numberToPow;
+            for (int number = 1; number <= 10; number++)
+            {
+                numberToPow = number;
+                Console.WriteLine("(" + number + " + " + 1 + ")^2 = " + Math.Pow(numberToPow, 2) + " + " + (2 * number) + " + " + 1 + " = " + (Math.Pow(numberToPow, 2) + 2 * number + 1));
+            }
+        }
+
+        public void Exercise28()
+        {
+            int fibonaci1 = 0, fibonaci2 = 1;
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.Write(fibonaci2 + ", ");
+                fibonaci2 += fibonaci1;
+                fibonaci1 = fibonaci2 - fibonaci1;
+            }
+        }
+
+        public void Exercise29()
+        {
+            for (int power = 0; power <= 10; power++)
+            {
+                Console.WriteLine("2^" + power + " = " + (Math.Pow(2, power)));
+            }
+        }
+
+        public void Exercise30()
+        {
+            Console.WriteLine("Podaj długość ciągu a_n");
+            int length = int.Parse(Console.ReadLine());
+
+            int a = 0, n = 1;
+            for (int i = 1; i <= length; i++)
+            {
+                Console.Write(n + ", ");
+                n += a;
+                a = n - a;
+            }
+        }
+        #endregion
+
+        #region Pętla do-while
+        public void Exercise31()
+        {
+            string password = "abc123", passwordFromUser;
+
+            do
+            {
+                Console.WriteLine("Podaj hasło: ");
+                passwordFromUser = Console.ReadLine();
+
+                if (passwordFromUser != password)
+                    Console.WriteLine("hasło niepoprawne");
+                else
+                    Console.WriteLine("hasło poprawne");
+            } while (passwordFromUser != password);
+        }
+
+        public void Exercise32()
+        {
+            double totality = 0;
+            do
+            {
+                for (int i = 1; i < 10; i++)
+                {
+                    if (totality <= 1000)
+                    {
+                        totality += Math.Pow(i, 2);
+                        Console.WriteLine(totality);
+                    }
+                }
+            } while (totality <= 1000);
+        }
+        #endregion
+
+        #region Trudniejsze zadania
+        public void Exercise33()
+        {
+            Console.WriteLine("Podaj tekest do zaszyfrowania: ");
+            string text = Console.ReadLine();
+            string code = "ABCDEFGHIJKLMNOPQRSTUVWYZ";
+            string textCode = string.Empty;
+            text = text.ToUpper();
+
+            for (int a = 0; a < text.Length; a++)
+            {
+                for (int b = 0; b < code.Length; b++)
+                {
+                    if (text[a] == code[b])
+                    {
+                        textCode += code[b + 3];
+                    }
+                }
+                if (textCode.Length - a == 0)
+                {
+                    textCode += text[a];
+                }
+            }
+            Console.WriteLine(textCode);
+        }
+
+        public void Exercise34()
+        {
+            Console.WriteLine("Podaj liczbę: ");
+            int number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbę: ");
+            int number2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("NWD: ");
+            while (number1 != number2)
+            {
+                if (number1 > number2)
+                    number1 -= number2;
+                else
+                    number2 -= number1;
+            }
+            Console.Write(number1);
+        }
+
+        public void Exercise35()
+        {
+
         }
         #endregion
     }

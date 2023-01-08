@@ -38,7 +38,7 @@ Pętla for:
 Pętla do-while:
     1. Program pytający użytkownika o hasło i wyświetlający komunikat "hasło poprawne" lub "hasło niepoprawne" dopóki użytkownik nie poda poprawnego hasła (np. "abc123").
     2. Program wyświetlający na ekranie kwadraty liczb od 1 do 10 (np. 1, 4, 9, 16 itd.) dopóki suma tych kwadratów nie przekroczy 1000.
-       Trudniejsze zadania:
+Trudniejsze zadania:
     1. Program implementujący algorytm szyfrowania Cezara (proste szyfrowanie, w którym każdy znak w tekście jest zastępowany innym znakiem, przesuniętym o stałą liczbę pozycji w alfabecie).
     2. Program obliczający największy wspólny dzielnik (NWD) dwóch liczb
     3. Program obliczający najmniejszą wspólną wielokrotność (NWW) dwóch liczb.
@@ -61,7 +61,7 @@ namespace LotOfTasks
         static void Main(string[] args)
         {
             Exercise exercise = new();
-            exercise.Exercise26();
+            exercise.Exercise34();
 
             /*
                 Console.WriteLine("Podaj liczbę:");
