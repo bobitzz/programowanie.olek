@@ -305,29 +305,6 @@ namespace LotOfTasks
             }
         }
 
-        /*
-        public void Exercise19()
-        {
-            Console.WriteLine("Podaj wyraz do sprawdzenia: ");
-            string word = Console.ReadLine();
-            Console.WriteLine("Podaj wyraz do sprawdzenia: ");
-            string word2 = Console.ReadLine();
-
-            bool IsAnagram(string word, string word2)
-            {
-                if (word.Length != word2.Length)
-                    return false;
-                List<char> list1 = word.ToList();
-                List<char> list2 = word2.ToList();
-                for (int i = 0; i < word.Length; i++)
-                    if (!list2.Remove(list1[i])) 
-                        return false;
-                return true;
-            }
-            IsAnagram(word, word2);
-        }
-        */
-
         public void Exercise20()
         {
             Console.WriteLine("Podaj liczbę: ");
