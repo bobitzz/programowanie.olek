@@ -61,7 +61,7 @@ namespace LotOfTasks
         static void Main(string[] args)
         {
             Exercise exercise = new();
-            exercise.Exercise34();
+            exercise.Exercise35();
 
             /*
                 Console.WriteLine("Podaj liczbę:");

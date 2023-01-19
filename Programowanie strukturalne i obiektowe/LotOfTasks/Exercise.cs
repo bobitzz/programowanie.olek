@@ -514,7 +514,11 @@ namespace LotOfTasks
             Console.WriteLine("Podaj liczbę: ");
             int number2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("NWD: ");
+            Console.WriteLine("NWD: " + NWD(number1, number2));
+        }
+
+        public int NWD(int number1, int number2)
+        {
             while (number1 != number2)
             {
                 if (number1 > number2)
@@ -522,13 +526,42 @@ namespace LotOfTasks
                 else
                     number2 -= number1;
             }
-            Console.Write(number1);
+            return number1;
         }
 
         public void Exercise35()
         {
+            Console.WriteLine("Podaj liczbę: ");
+            int number1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Podaj liczbę: ");
+            int number2 = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("NWW: " + NWW(number1, number2));
         }
-        #endregion
+
+        public int NWW(int number1, int number2)
+        {
+            int NWW = (number1 * number2) / NWD(number1, number2);
+            return NWW;
+        }
+
+        public void Exercise36()
+        {
+            Console.WriteLine("Podaj pesel");
+            string pesel = Console.ReadLine();
+        }
+
+        public bool CheckPesel(string pesel)
+        {
+            if (pesel.Length != 11)
+                return false;
+
+            for (int i = 0; i < pesel.Length(); i++)
+            {
+                if (pesel[i] < '0' || pesel[i] > '9')
+                    return false;
+            }
+        }
+        #endregion 
     }
 }
