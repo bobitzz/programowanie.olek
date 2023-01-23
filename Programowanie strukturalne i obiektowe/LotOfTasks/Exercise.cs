@@ -547,20 +547,21 @@ namespace LotOfTasks
 
         public void Exercise36()
         {
-            Console.WriteLine("Podaj pesel");
-            string pesel = Console.ReadLine();
+
         }
 
-        public bool CheckPesel(string pesel)
+        public void Exercise37()
         {
-            if (pesel.Length != 11)
-                return false;
+            Console.WriteLine("Podaj ciąg znaków: ");
+            string text = Console.ReadLine();
+            string vowels = "AEIOUÓYĄĘ";
+            string consonants = "BCĆDFGHJKLŁMNŃPRSŚTWZŹŻ";
+            int ammountOfVowels = 0, ammountOfconsonants = 0;
 
-            for (int i = 0; i < pesel.Length(); i++)
-            {
-                if (pesel[i] < '0' || pesel[i] > '9')
-                    return false;
-            }
+
+
+            Console.WriteLine("Ilość samogłosek to: " + ammountOfVowels);
+            Console.WriteLine("Ilość spółgłosek to: " + ammountOfconsonants);
         }
         #endregion 
     }
