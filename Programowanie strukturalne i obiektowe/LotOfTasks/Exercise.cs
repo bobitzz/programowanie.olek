@@ -547,7 +547,22 @@ namespace LotOfTasks
 
         public void Exercise36()
         {
+            Console.WriteLine("Podaj pesel: ");
+            string pesel = Console.ReadLine();
 
+            CheckPesel(pesel);
+        }
+
+        public bool CheckPesel(string pesel)
+        {
+            if (pesel.Length() != 11)
+                return false;
+
+            for (int i = 0; i <= 11 ; i++)
+            {
+                if (pesel[i] < '0' || pesel[i] > '9')
+                    return false;
+            }
         }
 
         public void Exercise37()
