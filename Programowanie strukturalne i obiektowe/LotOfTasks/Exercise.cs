@@ -550,9 +550,9 @@ namespace LotOfTasks
             Console.WriteLine("Podaj pesel: ");
             string pesel = Console.ReadLine();
 
-            CheckPesel(pesel);
+            //CheckPesel(pesel);
         }
-
+        /*
         public bool CheckPesel(string pesel)
         {
             if (pesel.Length() != 11)
@@ -564,7 +564,7 @@ namespace LotOfTasks
                     return false;
             }
         }
-
+        */
         public void Exercise37()
         {
             Console.WriteLine("Podaj ciąg znaków: ");
