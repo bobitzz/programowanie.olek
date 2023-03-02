@@ -11,24 +11,23 @@ namespace PropertiesApp
         private string name;
 
         private string surname;
-        public string Surname
-        {
-            get 
-            {
-
+        public string Surname {
+            get {
+                return surname;
             }
         }
 
         private int age;
-        public int Age 
-        {
-            set
-            {
-                if (age >= 1 && age <= 150)
+        public int Age {
+            set {
+                if (value >= 1 && value <= 150)
                     age = value;
+                else
+                {
+
+                }
             }
-            get
-            {
+            get {
                 return age;
             }
         }
@@ -37,7 +36,7 @@ namespace PropertiesApp
         {
             name = "Jan";
             surname = "Kowalski";
-            age = 25;
+            Age = 25;
         }
 
         public void SetAge(int age)
