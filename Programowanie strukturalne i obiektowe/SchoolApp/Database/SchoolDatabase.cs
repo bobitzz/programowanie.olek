@@ -12,10 +12,10 @@ namespace SchoolApp.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("FileName=SchoolDatbase.db");
+            optionsBuilder.UseSqlite("FileName=schoolDatbase.db");
             base.OnConfiguring(optionsBuilder);
         }
 
-        public List<SchoolClass> SchoolClasses { get; set; }
+        public DbSet<SchoolClass> SchoolClasses { get; set; }
     }
 }

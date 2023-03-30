@@ -1,6 +1,3 @@
-
-
-
 Zadanie 22
 Napisz program który wyœwietli kolejne liczby ci¹gu Fibonacciego. Iloœæ liczb wczytaj z klawiatury.
 
