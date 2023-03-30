@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using SchoolApp.Database;
+﻿using SchoolApp.Database;
 using SchoolApp.Database.Entities;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+
 
 namespace SchoolApp
 {
@@ -42,6 +43,11 @@ namespace SchoolApp
                 Console.WriteLine(item.Id + " " + item.Name);
             }
 
+            /*
+             select *
+             from SchoolClasses
+             where Nazwa like '%C'
+            */
             List<SchoolClass> classWithC = new List<SchoolClass>();
             foreach (SchoolClass item in schoolDatabase.SchoolClasses)
             {
@@ -50,6 +56,16 @@ namespace SchoolApp
             }
 
             Console.WriteLine("Klasy kończące się na literę 'C'");
+            foreach (var item in classWithC)
+            {
+                Console.WriteLine(item.Id + " " + item.Name);
+            }
+
+            classWithC = schoolDatabase
+                .SchoolClasses
+                .Where((SchoolClass sc) => /*return */sc.Name.EndsWith("C"))
+                .ToList();
+            Console.WriteLine("Klasy kończące się na literę 'C' uzyskane za pomocą metody LINQ");
             foreach (var item in classWithC)
             {
                 Console.WriteLine(item.Id + " " + item.Name);

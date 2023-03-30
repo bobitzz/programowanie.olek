@@ -1,10 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using SchoolApp.Database.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SchoolApp.Database.Entities;
 
 namespace SchoolApp.Database
 {
@@ -12,7 +12,8 @@ namespace SchoolApp.Database
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("FileName=schoolDatbase.db");
+            optionsBuilder.UseSqlite("FileName=schoolDatabase.db");
+
             base.OnConfiguring(optionsBuilder);
         }
 
