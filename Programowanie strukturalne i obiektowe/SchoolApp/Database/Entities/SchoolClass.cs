@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 /*
-    add-migration CreateDatabaseMigration -outputdir Database/Migrations - tworzenie migracji
-    update-Database - korzystanie z bazy
+    add-migration CreateDatabaseMigration -outputdir Database/Migrations
+    update-Database
  */
 
 namespace SchoolApp.Database.Entities
