@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SchoolApp.Database;
+using SchoolApp.Database.Entities;
 
 namespace SchoolApp
 {
@@ -25,16 +26,16 @@ namespace SchoolApp
                 switch(option)
                 {
                     case 1:
-                        //uzupełnić metodę
+                        AddNewSchoolClass();
                         break;
                     case 2:
-                        //uzupełnić metodę
+                        RemoveSchoolClass();
                         break;
                     case 3:
-                        //uzupełnić metodę
+                        ModifySchoolClass();
                         break;
                     case 4:
-                        //uzupełnić metodę
+                        ShowAllSchoolClasses();
                         break;
 
                     case 0:
@@ -47,6 +48,7 @@ namespace SchoolApp
         {
             Console.Clear();
             Console.WriteLine("Lista dostępnych opcji:");  //CRUD
+
             Console.WriteLine("1. Dodanie nowej klasy");  //C - create
             Console.WriteLine("2. Usunięcie klasy");  //D - delete
             Console.WriteLine("3. Modyfikacja klasy");  //U - update
@@ -54,5 +56,78 @@ namespace SchoolApp
             
             Console.WriteLine("0. Koniec programu");
         }
+
+        #region Metody do pracy na tabeli SchoolClasses
+
+        private void AddNewSchoolClass()
+        {
+            Console.WriteLine("Podaj nazwe klasy");
+            string className = Console.ReadLine();
+
+            SchoolClass schoolClass = new SchoolClass()
+            {
+                Name = className
+            };
+
+            schoolDatabase.SchoolClasses.Add(schoolClass);
+            schoolDatabase.SaveChanges();
+        }
+
+        private void ShowAllSchoolClasses()
+        {
+            Console.WriteLine("Wszystkie klasy:");
+            foreach (SchoolClass schoolClass in schoolDatabase.SchoolClasses)
+            {
+                Console.WriteLine(schoolClass.Id + " " + schoolClass.Name);
+            }
+            Console.ReadKey();
+        }
+
+        private void RemoveSchoolClass()
+        {
+            Console.WriteLine("Podaj id klasy do usunięcia: ");
+            if(int.TryParse(Console.ReadLine(), out int idToDeleted))
+            {
+                SchoolClass schoolClassToDelete = schoolDatabase.SchoolClasses.FirstOrDefault(sc => sc.Id == idToDeleted);
+                if (schoolClassToDelete != null)
+                {
+                    schoolDatabase.SchoolClasses.Remove(schoolClassToDelete);
+                    schoolDatabase.SaveChanges();   
+                    Console.WriteLine("Kasowanie zakończone sukcesem");
+                }
+                else
+                    Console.WriteLine("Brak klasy w bazie");
+            }
+            else
+                Console.WriteLine("Błąd parsowania. Nieprawidłowa liczba");
+
+            Console.ReadKey();
+        }
+
+        private void ModifySchoolClass()
+        {
+            Console.WriteLine("Podja id klasy do modyfikacji");
+            if (int.TryParse(Console.ReadLine(), out int idToModify))
+            {
+                SchoolClass schoolClassToModify = schoolDatabase.SchoolClasses.FirstOrDefault(sc => sc.Id == idToModify);
+                if (schoolClassToModify != null)
+                {
+                    Console.WriteLine("Podaj nową nazwę klasy");
+                    string newName = Console.ReadLine();
+
+                    schoolClassToModify.Name = newName;
+                    schoolDatabase.SaveChanges();
+                    Console.WriteLine("Modyfikacja zakończone sukcesem");
+                }
+                else
+                    Console.WriteLine("Brak klasy w bazie");
+            }
+            else
+                Console.WriteLine("Błąd parsowania. Nieprawidłowa liczba");
+
+            Console.ReadKey();
+        }
+
+        #endregion
     }
 }
