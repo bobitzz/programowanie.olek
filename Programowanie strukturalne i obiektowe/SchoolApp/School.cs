@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SchoolApp.Database;
 using SchoolApp.Database.Entities;
 
@@ -40,8 +41,17 @@ namespace SchoolApp
                     case 5:
                         AddNewStudent();
                         break;
+                    case 6:
+                        //usuwanie studenta
+                        break;
+                    case 7:
+                        //modyfikacja danych studenta
+                        break;
                     case 8:
                         ShowAllStudents();
+                        break;
+                    case 9:
+                        ShowAllStudentWithClass();
                         break;
 
                     case 0:
@@ -60,7 +70,10 @@ namespace SchoolApp
             Console.WriteLine("3. Modyfikacja klasy");  //U - update
             Console.WriteLine("4. Wyświetlenie wszytkich klas");  //R - read
             Console.WriteLine("5. Dodawanie studenta");
+            Console.WriteLine("6. Usuwanie studenta");
+            Console.WriteLine("7. Modyfikowanie danych studenta");
             Console.WriteLine("8. Wyświetlanie wszystkich uczniów");
+            Console.WriteLine("9. Wyświetlanie wszystkich uczniów z klasami");
             
             Console.WriteLine("0. Koniec programu");
         }
@@ -170,6 +183,21 @@ namespace SchoolApp
                 Console.WriteLine("Id " + student.Id);
                 Console.WriteLine("Imię " + student.Name);
                 Console.WriteLine("Nazwisko " + student.Surname + "\n");
+            }
+            Console.ReadKey();
+        }
+
+        private void ShowAllStudentWithClass()
+        {
+            Console.WriteLine("Wszyscy uczniowie:");
+
+            foreach (Student student in schoolDatabase.Students.Include(s => s.SchoolClass))
+            {
+                Console.WriteLine("Id " + student.Id);
+                Console.WriteLine("Imię " + student.Name);
+                Console.WriteLine("Nazwisko " + student.Surname);
+                Console.WriteLine("Nazwa klasy " + student.SchoolClass.Name);
+                Console.WriteLine("\n");
             }
             Console.ReadKey();
         }
