@@ -42,10 +42,10 @@ namespace SchoolApp
                         AddNewStudent();
                         break;
                     case 6:
-                        //usuwanie studenta
+                        RemoveStudent();
                         break;
                     case 7:
-                        //modyfikacja danych studenta
+                        ModifyStudent();
                         break;
                     case 8:
                         ShowAllStudents();
@@ -171,6 +171,55 @@ namespace SchoolApp
             schoolDatabase.Students.Add(student);
             schoolDatabase.SaveChanges();
             Console.WriteLine("Dodano studenta");
+            Console.ReadKey();
+        }
+
+        private void RemoveStudent()
+        {
+            Console.WriteLine("Podaj id studenta do usunięcia:");
+            if(int.TryParse(Console.ReadLine(), out int idToRemove))
+            {
+                Student studentToRemove = schoolDatabase.Students.FirstOrDefault(s => s.Id == idToRemove);
+                if(studentToRemove != null)
+                {
+                    schoolDatabase.Students.Remove(studentToRemove);
+                    schoolDatabase.SaveChanges();
+                    Console.WriteLine("Usuwanie zakończone sukcesem");
+                }
+                else
+                    Console.WriteLine("Brak studenta w bazie");
+            }
+            else
+                Console.WriteLine("Błąd parsowanie. Nieprawidłowa liczba");
+
+            Console.ReadKey();
+        }
+
+        private void ModifyStudent()
+        {
+            Console.WriteLine("Podaj id studenta do modyfikacji:");
+            if (int.TryParse(Console.ReadLine(), out int idToModify))
+            {
+                Student studentToModify = schoolDatabase.Students.FirstOrDefault(s => s.Id == idToModify);
+                if (studentToModify != null)
+                {
+                    Console.WriteLine("Podaj nowe imię ucznia");
+                    string newName = Console.ReadLine();
+                    studentToModify.Name = newName;
+
+                    Console.WriteLine("Podaj nowe nazwisko ucznia");
+                    string newSurname = Console.ReadLine();
+                    studentToModify.Surname = newSurname;
+
+                    schoolDatabase.SaveChanges();
+                    Console.WriteLine("Modyfikacja zakończna sukcesem");
+                }
+                else
+                    Console.WriteLine("Brak studenta w bazie");
+            }
+            else
+                Console.WriteLine("Błąd parsowanie. Nieprawidłowa liczba");
+
             Console.ReadKey();
         }
 
