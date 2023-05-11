@@ -53,6 +53,12 @@ namespace SchoolApp
                     case 9:
                         ShowAllStudentWithClass();
                         break;
+                    case 10:
+                        ShowAllStudentOrderBySurname();
+                            break;
+                    case 11:
+                        ShowStudents();
+                        break;
 
                     case 0:
                         return;
@@ -74,6 +80,8 @@ namespace SchoolApp
             Console.WriteLine("7. Modyfikowanie danych studenta");
             Console.WriteLine("8. Wyświetlanie wszystkich uczniów");
             Console.WriteLine("9. Wyświetlanie wszystkich uczniów z klasami");
+            Console.WriteLine("10. Wyświetlene uczniów posortowanych po nazwisku");
+            Console.WriteLine("11. Wyświetlanie uczniów z różnymi warunkami");
             
             Console.WriteLine("0. Koniec programu");
         }
@@ -247,6 +255,34 @@ namespace SchoolApp
                 Console.WriteLine("Nazwisko " + student.Surname);
                 Console.WriteLine("Nazwa klasy " + student.SchoolClass.Name);
                 Console.WriteLine("\n");
+            }
+            Console.ReadKey();
+        }
+
+        private void ShowAllStudentOrderBySurname()
+        {
+            Console.WriteLine("Lista uczniów:");
+            foreach (Student student in schoolDatabase.Students.OrderBy(s => s.Surname).ThenBy(s => s.Name))
+            {
+                Console.WriteLine("Id " + student.Id);
+                Console.WriteLine("Imię " + student.Name);
+                Console.WriteLine("Nazwisko " + student.Surname + "\n");
+            }
+            Console.ReadKey();
+        }
+
+        private void ShowStudents()
+        {
+            Console.WriteLine("Podaj imię ucznia do wyświetlenia");
+            string userName = Console.ReadLine();
+
+            Console.WriteLine($"Lista uczniów z imieniem {userName}"/* + " oraz z nazwiskiem zaczynającym się na literę B"*/);
+
+            foreach (Student student in schoolDatabase.Students.Where(s => s.Name == userName /*&& s.Surname.StartsWith("B")*/))
+            {
+                Console.WriteLine("Id " + student.Id);
+                Console.WriteLine("Imię " + student.Name);
+                Console.WriteLine("Nazwisko " + student.Surname + "\n");
             }
             Console.ReadKey();
         }
