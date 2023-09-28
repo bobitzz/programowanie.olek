@@ -1,5 +1,7 @@
 ﻿#include <iostream>
 #include <math.h>
+using namespace std;
+
 /*
 Napisz funkcję w której wczytamy 5 liczb i wyświetlimy je w odwrotnej kolejności.
  */
@@ -239,6 +241,7 @@ void Zadanie8()
 	}
 	std::cout << "\n";
 
+
 }
 
 /*
@@ -351,8 +354,8 @@ void Zadanie28()
 	std::cout << "Podaj zakres gorny:\n";
 	std::cin >> zakresGorny;
 
-	bool jestPierwsza[2000000000];
-	for (int i = 0; i < 2000000000; i++)
+	bool jestPierwsza[200];
+	for (int i = 0; i < 200; i++)
 		jestPierwsza[i] = true;
 
 	double wynikPierwiastka = sqrt(zakresGorny);
@@ -375,9 +378,98 @@ void Zadanie28()
 
 }
 
+/*
+Zadania:
+* Napisz funkcję, która dla kolekcji danych liczbowych obliczy średnią arytmetyczną.
+* Napisz funkcję, która dla kolekcji danych liczbowych policzy ile jest liczb większych od średniej arytmetycznej.
+* Napisz funkcje, która dla kolekcji danych liczbowych przeniesie te liczby do innej kolekcji w odwrotnej kolejności.
+* Napisz funkcje, która dla kolekcji danych liczbowych obliczy częstotliwość występowania danej liczby.
+* Napisz funkcję, która dla kolekcji danych liczbowych znajdzie najdłuższy rosnący podciąg.
+* Napisz funkcję, która dla kolekcji danych liczbowych przeniesie te liczby do osobnych kolekcji liczb parzystych i nieparzystych.
+*
+*/
+
+void Zadanie29()
+{
+	const int ROZMIAR_TABLICY = 5;
+	int number[ROZMIAR_TABLICY];
+
+	int zakresDolny = 1;
+	int zakresGorny = 25;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		number[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << number[i] << ", ";
+	}
+	std::cout << "\n";
+
+	float average = 0;
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		average += number[i];
+	}
+	average /= ROZMIAR_TABLICY;
+
+	cout << "Srednia wynosi: " << average;
+}
+
+void losowanieLiczb()
+{
+	const int ROZMIAR_TABLICY = 10;
+	int tablicaLiczb[ROZMIAR_TABLICY];
+
+	int zakresDolny = 1;
+	int zakresGorny = 25;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		tablicaLiczb[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << tablicaLiczb[i] << ", ";
+	}
+	std::cout << "\n";
+}
+
+void Zadanie30()
+{
+	float liczba[5];
+	std::cout << "Podaj 0 liczbe:\n";
+	std::cin >> liczba[0];
+	std::cout << "Podaj 1 liczbe:\n";
+	std::cin >> liczba[1];
+	std::cout << "Podaj 2 liczbe:\n";
+	std::cin >> liczba[2];
+	std::cout << "Podaj 3 liczbe:\n";
+	std::cin >> liczba[3];
+	std::cout << "Podaj 4 liczbe:\n";
+	std::cin >> liczba[4];
+
+	float max = liczba[0];
+	for (int i = 0; i < 5; i++)
+	{
+		if (liczba[i] > max)
+			max = liczba[i];
+	}
+	//cout << "Najwieksza liczba jest wieksza od sredniej o " << (max - average);
+}
+
 int main()
 {
-	Zadanie28();
+	Zadanie29();
 }
 
 void Szablon()
