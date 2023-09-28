@@ -186,4 +186,10 @@ int main()
     Pobierz od uzytkownika długości boków prostokąta i wyświetlić
     pole oraz obwód tego prostokąta.
     */
+
+    int a = 5;
+    if (a = 5)
+        std::cout << a;
+    else
+        std::cout << a;
 }
