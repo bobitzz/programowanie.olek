@@ -384,6 +384,7 @@ Zadania:
 * Napisz funkcję, która dla kolekcji danych liczbowych policzy ile jest liczb większych od średniej arytmetycznej.
 * Napisz funkcje, która dla kolekcji danych liczbowych przeniesie te liczby do innej kolekcji w odwrotnej kolejności.
 * Napisz funkcje, która dla kolekcji danych liczbowych obliczy częstotliwość występowania danej liczby.
+* 
 * Napisz funkcję, która dla kolekcji danych liczbowych znajdzie najdłuższy rosnący podciąg.
 * Napisz funkcję, która dla kolekcji danych liczbowych przeniesie te liczby do osobnych kolekcji liczb parzystych i nieparzystych.
 *
@@ -421,10 +422,10 @@ void Zadanie29()
 	cout << "Srednia wynosi: " << average;
 }
 
-void losowanieLiczb()
+void Zadanie30()
 {
-	const int ROZMIAR_TABLICY = 10;
-	int tablicaLiczb[ROZMIAR_TABLICY];
+	const int ROZMIAR_TABLICY = 5;
+	int number[ROZMIAR_TABLICY];
 
 	int zakresDolny = 1;
 	int zakresGorny = 25;
@@ -434,42 +435,105 @@ void losowanieLiczb()
 	for (int i = 0; i < ROZMIAR_TABLICY; i++)
 	{
 		//zakres <zakresDolny; zakresGorny>
-		tablicaLiczb[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
+		number[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
 	}
 
 	for (int i = 0; i < ROZMIAR_TABLICY; i++)
 	{
-		std::cout << tablicaLiczb[i] << ", ";
+		std::cout << number[i] << ", ";
 	}
 	std::cout << "\n";
-}
 
-void Zadanie30()
-{
-	float liczba[5];
-	std::cout << "Podaj 0 liczbe:\n";
-	std::cin >> liczba[0];
-	std::cout << "Podaj 1 liczbe:\n";
-	std::cin >> liczba[1];
-	std::cout << "Podaj 2 liczbe:\n";
-	std::cin >> liczba[2];
-	std::cout << "Podaj 3 liczbe:\n";
-	std::cin >> liczba[3];
-	std::cout << "Podaj 4 liczbe:\n";
-	std::cin >> liczba[4];
+	float average = 0;
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		average += number[i];
+	}
+	average /= ROZMIAR_TABLICY;
 
-	float max = liczba[0];
+	cout << "Liczby wieksze od sredniej to: ";
 	for (int i = 0; i < 5; i++)
 	{
-		if (liczba[i] > max)
-			max = liczba[i];
+		if (number[i] > average)
+			cout << number[i] << ", ";
 	}
-	//cout << "Najwieksza liczba jest wieksza od sredniej o " << (max - average);
+}
+
+void Zadanie31()
+{
+	const int ROZMIAR_TABLICY = 5;
+	int number[ROZMIAR_TABLICY];
+
+	int zakresDolny = 1;
+	int zakresGorny = 25;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		number[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << number[i] << ", ";
+	}
+	std::cout << "\n";
+
+	int reverseNumber[ROZMIAR_TABLICY];
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		reverseNumber[i] = number[ROZMIAR_TABLICY - i -1];
+		cout << reverseNumber[i] << ", ";
+	}
+	cout << "\n";
+}
+
+void Zadanie32()
+{
+	const int ROZMIAR_TABLICY = 5;
+	int numbers[ROZMIAR_TABLICY];
+
+	const int ZAKRES_DOLNY = 0;
+	const int ZAKRES_GORNY = 25;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		numbers[i] = rand() % (ZAKRES_GORNY - ZAKRES_DOLNY + 1) + ZAKRES_DOLNY;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+	int couters[ZAKRES_GORNY + 1];
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+		couters[i] = 0;
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		for (int j = 0; j < ROZMIAR_TABLICY; j++)
+		{
+			if (numbers[i] == numbers[j])
+			{
+				couters[i]++;
+			}
+		}
+		if (couters[i] == 1)
+			cout << "Czestotliwosc " << numbers[i] << " wynosi " << couters[i] << "\n";
+		else if(couters[i])
+	}
 }
 
 int main()
 {
-	Zadanie29();
+	Zadanie32();
 }
 
 void Szablon()
@@ -495,4 +559,26 @@ void Szablon()
 	std::cout << "\n";
 
 	//Tutaj umieszczamy algorytm dla zadania
+}
+void losowanieLiczb()
+{
+	const int ROZMIAR_TABLICY = 10;
+	int tablicaLiczb[ROZMIAR_TABLICY];
+
+	int zakresDolny = 1;
+	int zakresGorny = 25;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		tablicaLiczb[i] = rand() % (zakresGorny - zakresDolny + 1) + zakresDolny;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << tablicaLiczb[i] << ", ";
+	}
+	std::cout << "\n";
 }
