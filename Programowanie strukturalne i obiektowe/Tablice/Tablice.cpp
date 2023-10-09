@@ -384,7 +384,6 @@ Zadania:
 * Napisz funkcję, która dla kolekcji danych liczbowych policzy ile jest liczb większych od średniej arytmetycznej.
 * Napisz funkcje, która dla kolekcji danych liczbowych przeniesie te liczby do innej kolekcji w odwrotnej kolejności.
 * Napisz funkcje, która dla kolekcji danych liczbowych obliczy częstotliwość występowania danej liczby.
-* 
 * Napisz funkcję, która dla kolekcji danych liczbowych znajdzie najdłuższy rosnący podciąg.
 * Napisz funkcję, która dla kolekcji danych liczbowych przeniesie te liczby do osobnych kolekcji liczb parzystych i nieparzystych.
 *
@@ -492,6 +491,55 @@ void Zadanie31()
 
 void Zadanie32()
 {
+	const int ROZMIAR_TABLICY = 10;
+	int numbers[ROZMIAR_TABLICY];
+
+	const int ZAKRES_DOLNY = 0;
+	const int ZAKRES_GORNY = 10;
+
+	srand(time(NULL));
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		//zakres <zakresDolny; zakresGorny>
+		numbers[i] = rand() % (ZAKRES_GORNY - ZAKRES_DOLNY + 1) + ZAKRES_DOLNY;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	std::cout << "\n";
+
+	int counters[ZAKRES_GORNY + 1];
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+		counters[i] = 0;
+	/*
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		for (int j = 0; j < ROZMIAR_TABLICY; j++)
+		{
+			if (numbers[i] == numbers[j])
+			{
+				counters[i]++;
+			}
+		}
+		if (counters[i] == 1)
+			cout << "Czestotliwosc " << numbers[i] << " wynosi " << counters[i] << "\n";
+		else if(counters[i])
+	}
+	*/
+	for (int i = 0; i < ROZMIAR_TABLICY + 1; i++)
+		counters[i] = 0;
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+		counters[numbers[i]]++;
+	for (int i = 0; i < ROZMIAR_TABLICY + 1; i++)
+		cout << i << " = " << counters[i] << "\n";
+}
+
+void Zadanie33()
+{
 	const int ROZMIAR_TABLICY = 5;
 	int numbers[ROZMIAR_TABLICY];
 
@@ -510,24 +558,46 @@ void Zadanie32()
 	{
 		std::cout << numbers[i] << ", ";
 	}
-	std::cout << "\n";
+	cout << "\n";
 
-	int couters[ZAKRES_GORNY + 1];
-	for (int i = 0; i < ROZMIAR_TABLICY; i++)
-		couters[i] = 0;
+
+}
+
+void Zadanie34()
+{
+	const int ROZMIAR_TABLICY = 5;
+	int numbers[ROZMIAR_TABLICY];
+	int evenNumbers[ROZMIAR_TABLICY];
+	int notEvenNumbers[ROZMIAR_TABLICY];
+
+	const int ZAKRES_DOLNY = 0;
+	const int ZAKRES_GORNY = 25;
+
+	srand(time(NULL));
 
 	for (int i = 0; i < ROZMIAR_TABLICY; i++)
 	{
-		for (int j = 0; j < ROZMIAR_TABLICY; j++)
-		{
-			if (numbers[i] == numbers[j])
-			{
-				couters[i]++;
-			}
-		}
-		if (couters[i] == 1)
-			cout << "Czestotliwosc " << numbers[i] << " wynosi " << couters[i] << "\n";
-		else if(couters[i])
+		//zakres <zakresDolny; zakresGorny>
+		numbers[i] = rand() % (ZAKRES_GORNY - ZAKRES_DOLNY + 1) + ZAKRES_DOLNY;
+	}
+
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		std::cout << numbers[i] << ", ";
+	}
+	cout << "\n";
+
+	cout << "Liczby parzyste: ";
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		if (numbers[i] % 2 == 0)
+			cin >> evenNumbers[i];
+	}
+	cout << "\nLiczby nieparzyste: ";
+	for (int i = 0; i < ROZMIAR_TABLICY; i++)
+	{
+		if (numbers[i] % 2 == 1)
+			cin >> notEvenNumbers[i];
 	}
 }
 
