@@ -23,6 +23,13 @@ namespace GeometricConsoleApp
             else
                 throw new ArgumentException("Nie mozna ustawic wartosci ujemnych");
         }
+        public double DistanceFromCenter
+        {
+            get
+            {
+                return Math.Sqrt(x * x + y * y);
+            }
+        }
 
         public int GetX()
         {
