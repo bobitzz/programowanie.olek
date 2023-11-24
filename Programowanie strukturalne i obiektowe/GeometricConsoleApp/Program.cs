@@ -10,6 +10,7 @@ Console.WriteLine("Odległość od punktu (0,0) wynosi " + p.DistanceFromCenter)
 //p.DistanceFromCenter = 5; //niepoprawna ponieważ brak w propertisie SET
 
 Point p2 = new Point();
+
 //p2.x = 68;
 p2.SetX(68);
 //p2.y = 78;
