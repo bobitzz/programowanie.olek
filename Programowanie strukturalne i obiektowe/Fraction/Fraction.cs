@@ -49,5 +49,14 @@ namespace FractionConsoleApp
             Numerator = firstFraction.Numerator * secondFraction.Numerator;
             Denominator = firstFraction.Denominator * secondFraction.Denominator;
         }
+
+        public Fraction Mul(Fraction secondFraction)
+        {
+            Fraction fraction = new Fraction();
+            fraction.Mul(this, secondFraction);
+            return fraction;
+        }
+
+        public 
     }
 }

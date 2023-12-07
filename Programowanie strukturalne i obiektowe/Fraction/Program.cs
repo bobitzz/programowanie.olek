@@ -17,8 +17,11 @@ Console.WriteLine("Wartość drugiego ułamka: " + secondFraction);
 
 #region third fraction
 Fraction thirdFraction = new Fraction();        //iloczym 1 i 2 ułamka
+/*
 thirdFraction.Numerator = firstFraction.Numerator * secondFraction.Numerator;
 thirdFraction.Denominator = firstFraction.Denominator * secondFraction.Denominator;
+*/
+thirdFraction = firstFraction * secondFraction;
 
 Console.WriteLine("Wartość trzeciego ułamka jest równa: " + thirdFraction);
 #endregion
