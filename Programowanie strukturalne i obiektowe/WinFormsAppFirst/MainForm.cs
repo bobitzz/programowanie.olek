@@ -5,6 +5,7 @@ namespace WinFormsAppFirst
         public MainForm()
         {
             InitializeComponent();
+            comboBoxFavoriteMeal.SelectedIndex = -1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,8 +32,11 @@ namespace WinFormsAppFirst
                 PizzaWithPineaple = "Zaszlo jakies nieporozumienie\n";
             }
 
+            string favoriteMeal = comboBoxFavoriteMeal.Text;
+
             MessageBox.Show($"Witaj {name} w pierwszym programie.\n{schoolSubject}" +
-                $"{PizzaWithPineaple}",
+                $"{PizzaWithPineaple}"
+                + $"Ulubiona potrawa: {favoriteMeal}",
                 "Powitanie",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.None,

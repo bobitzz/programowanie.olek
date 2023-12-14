@@ -37,11 +37,13 @@
             radioButtonPizzaQuestionYes = new RadioButton();
             radioButtonPizzaQuestionNo = new RadioButton();
             labelPizzaQuestion = new Label();
+            comboBoxFavoriteMeal = new ComboBox();
+            labelFavoriteMeal = new Label();
             SuspendLayout();
             // 
             // HelloButton
             // 
-            HelloButton.Location = new Point(408, 254);
+            HelloButton.Location = new Point(408, 353);
             HelloButton.Name = "HelloButton";
             HelloButton.Size = new Size(118, 34);
             HelloButton.TabIndex = 1;
@@ -130,12 +132,34 @@
             labelPizzaQuestion.TabIndex = 9;
             labelPizzaQuestion.Text = "Do u like pizza with pineaple?";
             // 
+            // comboBoxFavoriteMeal
+            // 
+            comboBoxFavoriteMeal.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFavoriteMeal.FormattingEnabled = true;
+            comboBoxFavoriteMeal.Items.AddRange(new object[] { "Rosół", "Kebab", "Pizza", "Schabowy", "Ramen" });
+            comboBoxFavoriteMeal.Location = new Point(182, 275);
+            comboBoxFavoriteMeal.Name = "comboBoxFavoriteMeal";
+            comboBoxFavoriteMeal.Size = new Size(162, 23);
+            comboBoxFavoriteMeal.TabIndex = 10;
+            // 
+            // labelFavoriteMeal
+            // 
+            labelFavoriteMeal.AutoSize = true;
+            labelFavoriteMeal.Font = new Font("Microsoft YaHei", 7F, FontStyle.Italic, GraphicsUnit.Point);
+            labelFavoriteMeal.Location = new Point(182, 247);
+            labelFavoriteMeal.Name = "labelFavoriteMeal";
+            labelFavoriteMeal.Size = new Size(117, 16);
+            labelFavoriteMeal.TabIndex = 11;
+            labelFavoriteMeal.Text = "What is your fav meal?";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelFavoriteMeal);
+            Controls.Add(comboBoxFavoriteMeal);
             Controls.Add(labelPizzaQuestion);
             Controls.Add(radioButtonPizzaQuestionNo);
             Controls.Add(radioButtonPizzaQuestionYes);
@@ -162,5 +186,7 @@
         private RadioButton radioButtonPizzaQuestionYes;
         private RadioButton radioButtonPizzaQuestionNo;
         private Label labelPizzaQuestion;
+        private ComboBox comboBoxFavoriteMeal;
+        private Label labelFavoriteMeal;
     }
 }
