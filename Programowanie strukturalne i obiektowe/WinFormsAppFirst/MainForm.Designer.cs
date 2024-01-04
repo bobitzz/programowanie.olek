@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             HelloButton = new Button();
             textBoxName = new TextBox();
             laeblName = new Label();
@@ -39,11 +40,15 @@
             labelPizzaQuestion = new Label();
             comboBoxFavoriteMeal = new ComboBox();
             labelFavoriteMeal = new Label();
+            label1 = new Label();
+            labelCurrentTime = new Label();
+            buttonRefreshTime = new Button();
+            timerRefreshTime = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // HelloButton
             // 
-            HelloButton.Location = new Point(408, 353);
+            HelloButton.Location = new Point(408, 398);
             HelloButton.Name = "HelloButton";
             HelloButton.Size = new Size(118, 34);
             HelloButton.TabIndex = 1;
@@ -93,10 +98,10 @@
             // labelSchoolSubject
             // 
             labelSchoolSubject.AutoSize = true;
-            labelSchoolSubject.Font = new Font("Microsoft YaHei", 7F, FontStyle.Italic, GraphicsUnit.Point);
+            labelSchoolSubject.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
             labelSchoolSubject.Location = new Point(182, 157);
             labelSchoolSubject.Name = "labelSchoolSubject";
-            labelSchoolSubject.Size = new Size(162, 16);
+            labelSchoolSubject.Size = new Size(176, 16);
             labelSchoolSubject.TabIndex = 6;
             labelSchoolSubject.Text = "What is your fav school subject?";
             // 
@@ -125,10 +130,10 @@
             // labelPizzaQuestion
             // 
             labelPizzaQuestion.AutoSize = true;
-            labelPizzaQuestion.Font = new Font("Microsoft YaHei", 7F, FontStyle.Italic, GraphicsUnit.Point);
+            labelPizzaQuestion.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
             labelPizzaQuestion.Location = new Point(364, 157);
             labelPizzaQuestion.Name = "labelPizzaQuestion";
-            labelPizzaQuestion.Size = new Size(152, 16);
+            labelPizzaQuestion.Size = new Size(161, 16);
             labelPizzaQuestion.TabIndex = 9;
             labelPizzaQuestion.Text = "Do u like pizza with pineaple?";
             // 
@@ -137,27 +142,69 @@
             comboBoxFavoriteMeal.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxFavoriteMeal.FormattingEnabled = true;
             comboBoxFavoriteMeal.Items.AddRange(new object[] { "Rosół", "Kebab", "Pizza", "Schabowy", "Ramen" });
-            comboBoxFavoriteMeal.Location = new Point(182, 275);
+            comboBoxFavoriteMeal.Location = new Point(182, 272);
             comboBoxFavoriteMeal.Name = "comboBoxFavoriteMeal";
             comboBoxFavoriteMeal.Size = new Size(162, 23);
             comboBoxFavoriteMeal.TabIndex = 10;
+            comboBoxFavoriteMeal.SelectedIndexChanged += comboBoxFavoriteMeal_SelectedIndexChanged;
             // 
             // labelFavoriteMeal
             // 
             labelFavoriteMeal.AutoSize = true;
-            labelFavoriteMeal.Font = new Font("Microsoft YaHei", 7F, FontStyle.Italic, GraphicsUnit.Point);
-            labelFavoriteMeal.Location = new Point(182, 247);
+            labelFavoriteMeal.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            labelFavoriteMeal.Location = new Point(182, 244);
             labelFavoriteMeal.Name = "labelFavoriteMeal";
-            labelFavoriteMeal.Size = new Size(117, 16);
+            labelFavoriteMeal.Size = new Size(125, 16);
             labelFavoriteMeal.TabIndex = 11;
             labelFavoriteMeal.Text = "What is your fav meal?";
+            labelFavoriteMeal.Click += labelFavoriteMeal_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            label1.Location = new Point(182, 322);
+            label1.Name = "label1";
+            label1.Size = new Size(75, 16);
+            label1.TabIndex = 15;
+            label1.Text = "Current time:";
+            // 
+            // labelCurrentTime
+            // 
+            labelCurrentTime.AutoSize = true;
+            labelCurrentTime.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
+            labelCurrentTime.Location = new Point(182, 347);
+            labelCurrentTime.Name = "labelCurrentTime";
+            labelCurrentTime.Size = new Size(38, 16);
+            labelCurrentTime.TabIndex = 16;
+            labelCurrentTime.Text = "label1";
+            // 
+            // buttonRefreshTime
+            // 
+            buttonRefreshTime.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonRefreshTime.Location = new Point(182, 366);
+            buttonRefreshTime.Name = "buttonRefreshTime";
+            buttonRefreshTime.Size = new Size(75, 23);
+            buttonRefreshTime.TabIndex = 17;
+            buttonRefreshTime.Text = "Refresh timer";
+            buttonRefreshTime.UseVisualStyleBackColor = true;
+            buttonRefreshTime.Click += buttonRefreshTime_Click;
+            // 
+            // timerRefreshTime
+            // 
+            timerRefreshTime.Enabled = true;
+            timerRefreshTime.Interval = 1000;
+            timerRefreshTime.Tick += timerRefreshTime_Tick;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 588);
+            Controls.Add(buttonRefreshTime);
+            Controls.Add(labelCurrentTime);
+            Controls.Add(label1);
             Controls.Add(labelFavoriteMeal);
             Controls.Add(comboBoxFavoriteMeal);
             Controls.Add(labelPizzaQuestion);
@@ -188,5 +235,9 @@
         private Label labelPizzaQuestion;
         private ComboBox comboBoxFavoriteMeal;
         private Label labelFavoriteMeal;
+        private Label labelCurrentTime;
+        private Label label1;
+        private Button buttonRefreshTime;
+        private System.Windows.Forms.Timer timerRefreshTime;
     }
 }
