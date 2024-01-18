@@ -44,11 +44,21 @@
             labelCurrentTime = new Label();
             buttonRefreshTime = new Button();
             timerRefreshTime = new System.Windows.Forms.Timer(components);
+            labelMouseClick = new Label();
+            numericUpDownFirstNumber = new NumericUpDown();
+            numericUpDownSecondNumber = new NumericUpDown();
+            buttonDiv = new Button();
+            buttonMul = new Button();
+            buttonSub = new Button();
+            buttonAdd = new Button();
+            labelResult = new Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFirstNumber).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSecondNumber).BeginInit();
             SuspendLayout();
             // 
             // HelloButton
             // 
-            HelloButton.Location = new Point(408, 398);
+            HelloButton.Location = new Point(408, 360);
             HelloButton.Name = "HelloButton";
             HelloButton.Size = new Size(118, 34);
             HelloButton.TabIndex = 1;
@@ -163,7 +173,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            label1.Location = new Point(182, 322);
+            label1.Location = new Point(656, 90);
             label1.Name = "label1";
             label1.Size = new Size(75, 16);
             label1.TabIndex = 15;
@@ -173,7 +183,7 @@
             // 
             labelCurrentTime.AutoSize = true;
             labelCurrentTime.Font = new Font("Microsoft YaHei", 8F, FontStyle.Italic, GraphicsUnit.Point);
-            labelCurrentTime.Location = new Point(182, 347);
+            labelCurrentTime.Location = new Point(656, 115);
             labelCurrentTime.Name = "labelCurrentTime";
             labelCurrentTime.Size = new Size(38, 16);
             labelCurrentTime.TabIndex = 16;
@@ -182,7 +192,7 @@
             // buttonRefreshTime
             // 
             buttonRefreshTime.Font = new Font("Segoe UI", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            buttonRefreshTime.Location = new Point(182, 366);
+            buttonRefreshTime.Location = new Point(656, 134);
             buttonRefreshTime.Name = "buttonRefreshTime";
             buttonRefreshTime.Size = new Size(75, 23);
             buttonRefreshTime.TabIndex = 17;
@@ -196,12 +206,96 @@
             timerRefreshTime.Interval = 1000;
             timerRefreshTime.Tick += timerRefreshTime_Tick;
             // 
+            // labelMouseClick
+            // 
+            labelMouseClick.AutoSize = true;
+            labelMouseClick.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelMouseClick.ForeColor = Color.Firebrick;
+            labelMouseClick.Location = new Point(185, 326);
+            labelMouseClick.Name = "labelMouseClick";
+            labelMouseClick.Size = new Size(106, 21);
+            labelMouseClick.TabIndex = 18;
+            labelMouseClick.Text = "Not click yet";
+            labelMouseClick.Click += label2_Click_2;
+            labelMouseClick.MouseClick += labelMouseClick_MouseClick_1;
+            // 
+            // numericUpDownFirstNumber
+            // 
+            numericUpDownFirstNumber.Location = new Point(185, 418);
+            numericUpDownFirstNumber.Name = "numericUpDownFirstNumber";
+            numericUpDownFirstNumber.Size = new Size(120, 23);
+            numericUpDownFirstNumber.TabIndex = 19;
+            // 
+            // numericUpDownSecondNumber
+            // 
+            numericUpDownSecondNumber.Location = new Point(323, 418);
+            numericUpDownSecondNumber.Name = "numericUpDownSecondNumber";
+            numericUpDownSecondNumber.Size = new Size(120, 23);
+            numericUpDownSecondNumber.TabIndex = 20;
+            // 
+            // buttonDiv
+            // 
+            buttonDiv.Location = new Point(425, 447);
+            buttonDiv.Name = "buttonDiv";
+            buttonDiv.Size = new Size(75, 23);
+            buttonDiv.TabIndex = 27;
+            buttonDiv.Text = "/";
+            buttonDiv.UseVisualStyleBackColor = true;
+            buttonDiv.Click += operation_Click;
+            // 
+            // buttonMul
+            // 
+            buttonMul.Location = new Point(344, 447);
+            buttonMul.Name = "buttonMul";
+            buttonMul.Size = new Size(75, 23);
+            buttonMul.TabIndex = 26;
+            buttonMul.Text = "*";
+            buttonMul.UseVisualStyleBackColor = true;
+            buttonMul.Click += operation_Click;
+            // 
+            // buttonSub
+            // 
+            buttonSub.Location = new Point(263, 447);
+            buttonSub.Name = "buttonSub";
+            buttonSub.Size = new Size(75, 23);
+            buttonSub.TabIndex = 25;
+            buttonSub.Text = "-";
+            buttonSub.UseVisualStyleBackColor = true;
+            buttonSub.Click += operation_Click;
+            // 
+            // buttonAdd
+            // 
+            buttonAdd.Location = new Point(182, 447);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(75, 23);
+            buttonAdd.TabIndex = 28;
+            buttonAdd.Text = "+";
+            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.Click += operation_Click;
+            // 
+            // labelResult
+            // 
+            labelResult.AutoSize = true;
+            labelResult.Location = new Point(185, 484);
+            labelResult.Name = "labelResult";
+            labelResult.Size = new Size(36, 15);
+            labelResult.TabIndex = 29;
+            labelResult.Text = "result";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 588);
+            Controls.Add(labelResult);
+            Controls.Add(buttonAdd);
+            Controls.Add(buttonDiv);
+            Controls.Add(buttonMul);
+            Controls.Add(buttonSub);
+            Controls.Add(numericUpDownSecondNumber);
+            Controls.Add(numericUpDownFirstNumber);
+            Controls.Add(labelMouseClick);
             Controls.Add(buttonRefreshTime);
             Controls.Add(labelCurrentTime);
             Controls.Add(label1);
@@ -218,6 +312,9 @@
             Controls.Add(HelloButton);
             Name = "MainForm";
             Text = "Form1";
+            MouseClick += MainForm_MouseClick;
+            ((System.ComponentModel.ISupportInitialize)numericUpDownFirstNumber).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownSecondNumber).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -239,5 +336,13 @@
         private Label label1;
         private Button buttonRefreshTime;
         private System.Windows.Forms.Timer timerRefreshTime;
+        private Label labelMouseClick;
+        private NumericUpDown numericUpDownFirstNumber;
+        private NumericUpDown numericUpDownSecondNumber;
+        private Button buttonDiv;
+        private Button buttonMul;
+        private Button buttonSub;
+        private Button buttonAdd;
+        private Label labelResult;
     }
 }

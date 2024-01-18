@@ -73,5 +73,64 @@ namespace WinFormsAppFirst
         {
             labelCurrentTime.Text = DateTime.Now.ToString();
         }
+
+        private void labelCurrentTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void labelMouseClick_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                labelMouseClick.Text = "Left click";
+            else if (e.Button == MouseButtons.Right)
+                labelMouseClick.Text = "Right click";
+        }
+
+        private void operation_Click(object sender, EventArgs e)
+        {
+            Decimal firstNumber = numericUpDownFirstNumber.Value;
+            Decimal secondNumber = numericUpDownSecondNumber.Value;
+
+            Decimal result = 0;
+
+            Button button = sender as Button;
+            if (button == null)
+                return;
+
+            string operation = button.Text;
+            switch (operation)
+            {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "*":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    result = firstNumber / secondNumber;
+                    break;
+            }
+
+            labelResult.Text = "Wynik " + result.ToString();
+        }
     }
 }
