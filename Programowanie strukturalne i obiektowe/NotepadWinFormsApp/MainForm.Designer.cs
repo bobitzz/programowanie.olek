@@ -44,6 +44,7 @@
             statusStripInfo = new StatusStrip();
             openFileDialog = new OpenFileDialog();
             saveFileDialog = new SaveFileDialog();
+            cofnijToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -109,6 +110,7 @@
             // 
             // edycjaToolStripMenuItem
             // 
+            edycjaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cofnijToolStripMenuItem });
             edycjaToolStripMenuItem.Name = "edycjaToolStripMenuItem";
             edycjaToolStripMenuItem.Size = new Size(53, 20);
             edycjaToolStripMenuItem.Text = "&Edycja";
@@ -157,6 +159,14 @@
             // 
             saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt";
             // 
+            // cofnijToolStripMenuItem
+            // 
+            cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
+            cofnijToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
+            cofnijToolStripMenuItem.Size = new Size(180, 22);
+            cofnijToolStripMenuItem.Text = "Cofnij";
+            cofnijToolStripMenuItem.Click += cofnijToolStripMenuItem_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -192,5 +202,6 @@
         private StatusStrip statusStripInfo;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
+        private ToolStripMenuItem cofnijToolStripMenuItem;
     }
 }

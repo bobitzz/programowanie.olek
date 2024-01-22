@@ -41,12 +41,17 @@ namespace NotepadWinFormsApp
 
         private void zapiszToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(filePath != "" || saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (filePath != "" || saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 if (filePath == "")
                     filePath = saveFileDialog.FileName;
                 File.WriteAllText(filePath, textBoxNotepad.Text);
             }
+        }
+
+        private void cofnijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.Undo();
         }
     }
 }
