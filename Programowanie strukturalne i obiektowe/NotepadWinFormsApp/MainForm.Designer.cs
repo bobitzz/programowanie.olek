@@ -31,7 +31,7 @@
             menuStrip1 = new MenuStrip();
             plikToolStripMenuItem = new ToolStripMenuItem();
             nowyToolStripMenuItem = new ToolStripMenuItem();
-            otwórToolStripMenuItem = new ToolStripMenuItem();
+            otwórzToolStripMenuItem = new ToolStripMenuItem();
             zapiszToolStripMenuItem = new ToolStripMenuItem();
             zapiszJakoToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
@@ -42,6 +42,8 @@
             pomocToolStripMenuItem = new ToolStripMenuItem();
             textBoxNotepad = new TextBox();
             statusStripInfo = new StatusStrip();
+            openFileDialog = new OpenFileDialog();
+            saveFileDialog = new SaveFileDialog();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             // plikToolStripMenuItem
             // 
-            plikToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nowyToolStripMenuItem, otwórToolStripMenuItem, zapiszToolStripMenuItem, zapiszJakoToolStripMenuItem, toolStripMenuItem1, zamknijToolStripMenuItem });
+            plikToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nowyToolStripMenuItem, otwórzToolStripMenuItem, zapiszToolStripMenuItem, zapiszJakoToolStripMenuItem, toolStripMenuItem1, zamknijToolStripMenuItem });
             plikToolStripMenuItem.Name = "plikToolStripMenuItem";
             plikToolStripMenuItem.Size = new Size(38, 20);
             plikToolStripMenuItem.Text = "&Plik";
@@ -69,12 +71,13 @@
             nowyToolStripMenuItem.Text = "Nowy";
             nowyToolStripMenuItem.Click += nowyToolStripMenuItem_Click;
             // 
-            // otwórToolStripMenuItem
+            // otwórzToolStripMenuItem
             // 
-            otwórToolStripMenuItem.Name = "otwórToolStripMenuItem";
-            otwórToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            otwórToolStripMenuItem.Size = new Size(204, 22);
-            otwórToolStripMenuItem.Text = "Otwórz";
+            otwórzToolStripMenuItem.Name = "otwórzToolStripMenuItem";
+            otwórzToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            otwórzToolStripMenuItem.Size = new Size(204, 22);
+            otwórzToolStripMenuItem.Text = "Otwórz";
+            otwórzToolStripMenuItem.Click += otwórzToolStripMenuItem_Click;
             // 
             // zapiszToolStripMenuItem
             // 
@@ -82,6 +85,7 @@
             zapiszToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
             zapiszToolStripMenuItem.Size = new Size(204, 22);
             zapiszToolStripMenuItem.Text = "Zapisz";
+            zapiszToolStripMenuItem.Click += zapiszToolStripMenuItem_Click;
             // 
             // zapiszJakoToolStripMenuItem
             // 
@@ -89,6 +93,7 @@
             zapiszJakoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.S;
             zapiszJakoToolStripMenuItem.Size = new Size(204, 22);
             zapiszJakoToolStripMenuItem.Text = "Zapisz jako";
+            zapiszJakoToolStripMenuItem.Click += zapiszJakoToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
@@ -143,6 +148,15 @@
             statusStripInfo.TabIndex = 2;
             statusStripInfo.Text = "statusStripInfo";
             // 
+            // openFileDialog
+            // 
+            openFileDialog.FileName = "openFileDialog";
+            openFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki|*.*";
+            // 
+            // saveFileDialog
+            // 
+            saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -165,7 +179,7 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem plikToolStripMenuItem;
         private ToolStripMenuItem nowyToolStripMenuItem;
-        private ToolStripMenuItem otwórToolStripMenuItem;
+        private ToolStripMenuItem otwórzToolStripMenuItem;
         private ToolStripMenuItem edycjaToolStripMenuItem;
         private ToolStripMenuItem formatToolStripMenuItem;
         private ToolStripMenuItem widokToolStripMenuItem;
@@ -176,5 +190,7 @@
         private ToolStripMenuItem zamknijToolStripMenuItem;
         private TextBox textBoxNotepad;
         private StatusStrip statusStripInfo;
+        private OpenFileDialog openFileDialog;
+        private SaveFileDialog saveFileDialog;
     }
 }
