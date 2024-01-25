@@ -37,6 +37,15 @@
             toolStripMenuItem1 = new ToolStripSeparator();
             zamknijToolStripMenuItem = new ToolStripMenuItem();
             edycjaToolStripMenuItem = new ToolStripMenuItem();
+            cofnijToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            wytnijToolStripMenuItem = new ToolStripMenuItem();
+            kopiujToolStripMenuItem = new ToolStripMenuItem();
+            wklejToolStripMenuItem = new ToolStripMenuItem();
+            usuńToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripSeparator();
+            zaznaczWszystkoToolStripMenuItem = new ToolStripMenuItem();
+            godzinadataToolStripMenuItem = new ToolStripMenuItem();
             formatToolStripMenuItem = new ToolStripMenuItem();
             widokToolStripMenuItem = new ToolStripMenuItem();
             pomocToolStripMenuItem = new ToolStripMenuItem();
@@ -44,7 +53,6 @@
             statusStripInfo = new StatusStrip();
             openFileDialog = new OpenFileDialog();
             saveFileDialog = new SaveFileDialog();
-            cofnijToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -110,10 +118,76 @@
             // 
             // edycjaToolStripMenuItem
             // 
-            edycjaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cofnijToolStripMenuItem });
+            edycjaToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cofnijToolStripMenuItem, toolStripMenuItem2, wytnijToolStripMenuItem, kopiujToolStripMenuItem, wklejToolStripMenuItem, usuńToolStripMenuItem, toolStripMenuItem3, zaznaczWszystkoToolStripMenuItem, godzinadataToolStripMenuItem });
             edycjaToolStripMenuItem.Name = "edycjaToolStripMenuItem";
             edycjaToolStripMenuItem.Size = new Size(53, 20);
             edycjaToolStripMenuItem.Text = "&Edycja";
+            // 
+            // cofnijToolStripMenuItem
+            // 
+            cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
+            cofnijToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
+            cofnijToolStripMenuItem.Size = new Size(208, 22);
+            cofnijToolStripMenuItem.Text = "Cofnij";
+            cofnijToolStripMenuItem.Click += cofnijToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(205, 6);
+            // 
+            // wytnijToolStripMenuItem
+            // 
+            wytnijToolStripMenuItem.Name = "wytnijToolStripMenuItem";
+            wytnijToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
+            wytnijToolStripMenuItem.Size = new Size(208, 22);
+            wytnijToolStripMenuItem.Text = "Wytnij";
+            wytnijToolStripMenuItem.Click += wytnijToolStripMenuItem_Click;
+            // 
+            // kopiujToolStripMenuItem
+            // 
+            kopiujToolStripMenuItem.Name = "kopiujToolStripMenuItem";
+            kopiujToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
+            kopiujToolStripMenuItem.Size = new Size(208, 22);
+            kopiujToolStripMenuItem.Text = "Kopiuj";
+            kopiujToolStripMenuItem.Click += kopiujToolStripMenuItem_Click;
+            // 
+            // wklejToolStripMenuItem
+            // 
+            wklejToolStripMenuItem.Name = "wklejToolStripMenuItem";
+            wklejToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
+            wklejToolStripMenuItem.Size = new Size(208, 22);
+            wklejToolStripMenuItem.Text = "Wklej";
+            wklejToolStripMenuItem.Click += wklejToolStripMenuItem_Click;
+            // 
+            // usuńToolStripMenuItem
+            // 
+            usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
+            usuńToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            usuńToolStripMenuItem.Size = new Size(208, 22);
+            usuńToolStripMenuItem.Text = "Usuń";
+            usuńToolStripMenuItem.Click += usuńToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(205, 6);
+            // 
+            // zaznaczWszystkoToolStripMenuItem
+            // 
+            zaznaczWszystkoToolStripMenuItem.Name = "zaznaczWszystkoToolStripMenuItem";
+            zaznaczWszystkoToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
+            zaznaczWszystkoToolStripMenuItem.Size = new Size(208, 22);
+            zaznaczWszystkoToolStripMenuItem.Text = "Zaznacz wszystko";
+            zaznaczWszystkoToolStripMenuItem.Click += zaznaczWszystkoToolStripMenuItem_Click;
+            // 
+            // godzinadataToolStripMenuItem
+            // 
+            godzinadataToolStripMenuItem.Name = "godzinadataToolStripMenuItem";
+            godzinadataToolStripMenuItem.ShortcutKeys = Keys.F5;
+            godzinadataToolStripMenuItem.Size = new Size(208, 22);
+            godzinadataToolStripMenuItem.Text = "Godzina/data";
+            godzinadataToolStripMenuItem.Click += godzinadataToolStripMenuItem_Click;
             // 
             // formatToolStripMenuItem
             // 
@@ -159,14 +233,6 @@
             // 
             saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt";
             // 
-            // cofnijToolStripMenuItem
-            // 
-            cofnijToolStripMenuItem.Name = "cofnijToolStripMenuItem";
-            cofnijToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            cofnijToolStripMenuItem.Size = new Size(180, 22);
-            cofnijToolStripMenuItem.Text = "Cofnij";
-            cofnijToolStripMenuItem.Click += cofnijToolStripMenuItem_Click;
-            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -203,5 +269,13 @@
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
         private ToolStripMenuItem cofnijToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem wytnijToolStripMenuItem;
+        private ToolStripMenuItem kopiujToolStripMenuItem;
+        private ToolStripMenuItem wklejToolStripMenuItem;
+        private ToolStripMenuItem usuńToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem3;
+        private ToolStripMenuItem zaznaczWszystkoToolStripMenuItem;
+        private ToolStripMenuItem godzinadataToolStripMenuItem;
     }
 }

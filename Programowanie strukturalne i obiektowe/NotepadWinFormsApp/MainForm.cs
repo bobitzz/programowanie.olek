@@ -9,6 +9,7 @@ namespace NotepadWinFormsApp
             InitializeComponent();
         }
 
+        #region Plik
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -48,10 +49,43 @@ namespace NotepadWinFormsApp
                 File.WriteAllText(filePath, textBoxNotepad.Text);
             }
         }
+        #endregion
 
+        #region Edycja
         private void cofnijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBoxNotepad.Undo();
+        }
+
+        private void wytnijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.Cut();
+        }
+        #endregion
+
+        private void kopiujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.Copy();
+        }
+
+        private void wklejToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.Paste();
+        }
+
+        private void usuñToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.SelectedText = string.Empty;
+        }
+
+        private void zaznaczWszystkoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.SelectAll();
+        }
+
+        private void godzinadataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxNotepad.Paste(DateTime.Now.ToString("hh:mm dd-MM-yyyy"));
         }
     }
 }
