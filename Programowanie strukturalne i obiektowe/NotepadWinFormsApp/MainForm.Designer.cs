@@ -215,6 +215,8 @@
             textBoxNotepad.Name = "textBoxNotepad";
             textBoxNotepad.Size = new Size(800, 426);
             textBoxNotepad.TabIndex = 1;
+            textBoxNotepad.KeyDown += textBoxNotepad_KeyDown;
+            textBoxNotepad.KeyUp += textBoxNotepad_KeyUp;
             // 
             // statusStripInfo
             // 
