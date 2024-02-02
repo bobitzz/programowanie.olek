@@ -130,6 +130,12 @@ namespace NotepadWinFormsApp
         }
         #endregion
 
-
+        #region pomoc
+        private void oProgramieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aboutForm aboutForm = new aboutForm();
+            aboutForm.ShowDialog();
+        }
+        #endregion
     }
 }

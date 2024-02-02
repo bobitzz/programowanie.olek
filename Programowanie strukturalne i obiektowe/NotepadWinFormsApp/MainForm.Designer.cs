@@ -53,6 +53,7 @@
             statusStripInfo = new StatusStrip();
             openFileDialog = new OpenFileDialog();
             saveFileDialog = new SaveFileDialog();
+            oProgramieToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -203,6 +204,7 @@
             // 
             // pomocToolStripMenuItem
             // 
+            pomocToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { oProgramieToolStripMenuItem });
             pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
             pomocToolStripMenuItem.Size = new Size(57, 20);
             pomocToolStripMenuItem.Text = "Pomo&c";
@@ -234,6 +236,13 @@
             // saveFileDialog
             // 
             saveFileDialog.Filter = "Pliki tekstowe (*.txt)|*.txt";
+            // 
+            // oProgramieToolStripMenuItem
+            // 
+            oProgramieToolStripMenuItem.Name = "oProgramieToolStripMenuItem";
+            oProgramieToolStripMenuItem.Size = new Size(180, 22);
+            oProgramieToolStripMenuItem.Text = "O programie";
+            oProgramieToolStripMenuItem.Click += oProgramieToolStripMenuItem_Click;
             // 
             // MainForm
             // 
@@ -279,5 +288,6 @@
         private ToolStripSeparator toolStripMenuItem3;
         private ToolStripMenuItem zaznaczWszystkoToolStripMenuItem;
         private ToolStripMenuItem godzinadataToolStripMenuItem;
+        private ToolStripMenuItem oProgramieToolStripMenuItem;
     }
 }
