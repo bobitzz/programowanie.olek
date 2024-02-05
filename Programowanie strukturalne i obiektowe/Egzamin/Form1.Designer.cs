@@ -66,7 +66,6 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(161, 23);
             textBoxEmail.TabIndex = 2;
-            textBoxEmail.Text = "email";
             // 
             // labelHaslo
             // 

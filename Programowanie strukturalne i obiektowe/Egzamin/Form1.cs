@@ -13,8 +13,10 @@ namespace Egzamin
 
             if (!email.Contains("@"))
                 labelWiadomosc.Text = "B³êdny mail";
-            if(textBoxHaslo.Text == textBoxPowtorzHaslo.Text)
-
+            else if (!(textBoxHaslo.Text == textBoxPowtorzHaslo.Text))
+                labelWiadomosc.Text = "Has³a siê ró¿ni¹";
+            else
+                labelWiadomosc.Text = "Witaj " + email;
         }
     }
 }
