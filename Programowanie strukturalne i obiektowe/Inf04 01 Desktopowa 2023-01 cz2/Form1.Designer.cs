@@ -139,6 +139,7 @@
             buttonPasswordGenerator.TabIndex = 7;
             buttonPasswordGenerator.Text = "Generuj hasło";
             buttonPasswordGenerator.UseVisualStyleBackColor = false;
+            buttonPasswordGenerator.Click += buttonPasswordGenerator_Click;
             // 
             // checkBoxPassGenSpecialSigns
             // 
