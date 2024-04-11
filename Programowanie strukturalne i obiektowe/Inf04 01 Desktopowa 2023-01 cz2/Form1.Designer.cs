@@ -177,7 +177,6 @@
             textBoxPassowrdGenerator.Name = "textBoxPassowrdGenerator";
             textBoxPassowrdGenerator.Size = new Size(121, 23);
             textBoxPassowrdGenerator.TabIndex = 3;
-            textBoxPassowrdGenerator.TextChanged += textBoxPassowrdGenerator_TextChanged;
             // 
             // labelPassowrdGenerator
             // 
@@ -199,6 +198,7 @@
             buttonAccept.TabIndex = 8;
             buttonAccept.Text = "Zatwierdź";
             buttonAccept.UseVisualStyleBackColor = false;
+            buttonAccept.Click += buttonAccept_Click;
             // 
             // FormAddEmployee
             // 
