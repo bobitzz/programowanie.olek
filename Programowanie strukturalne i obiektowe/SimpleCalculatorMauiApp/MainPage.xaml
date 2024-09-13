@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleCalculatorMauiApp.MainPage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     Background="LightBlue">
+            <Label Text="Pierwsza liczba: "
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   x:Name="firstNumberEntry"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     Background="Tan">
+            <Label Text="Pierwsza liczba: "
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   x:Name="secondNumberEntry"/>
+        </StackLayout>
+
+        <Label Text="Operacja do wykonania"
+               FontSize="20"/>
+
+        <RadioButton Content="+" 
+                     FontSize="20"
+                     x:Name="operationAddRadioButton"/>
+        <RadioButton Content="-" 
+                     FontSize="20"
+                     x:Name="operationSubRadioButton"/>
+        <RadioButton Content="*"
+                     FontSize="20"
+                     x:Name="operationMulRadioButton"/>
+        <RadioButton Content="/"
+                     FontSize="20"
+                     x:Name="operationDivRadioButton"/>
+
+        <Button Text="Oblicz" 
+                HorizontalOptions="Start"
+                FontSize="20"
+                Clicked="Button_Clicked"/>
+
+        <Label x:Name="resultLabel"/>
+    </StackLayout>
+
+</ContentPage>
