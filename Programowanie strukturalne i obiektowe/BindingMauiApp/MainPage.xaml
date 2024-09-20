@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BindingMauiApp.MainPage">
+             x:Class="BindingMauiApp.MainPage"
+             x:Name="thisPage">
 
     <StackLayout>
         <Slider Minimum="0"
@@ -11,27 +12,24 @@
                 ThumbColor="Brown"
                 ValueChanged="Slider_ValueChanged"
                 x:Name="rotationSlider"/>
-        
-        <Label Text="{Binding Source={x:Reference rotationSlider}, Path=Value}"
-               FontSize="{Binding Source={x:Reference rotationSlider}, Path=Value}"/>
-        
+
+        <Label Text="{Binding Source={x:Reference rotationSlider},Path=Value}"
+               FontSize="{Binding Source={x:Reference rotationSlider},Path=Value}"/>
+
         <Label BindingContext="{x:Reference rotationSlider}"
                Text="{Binding Path=Value}"
-               FontSize="{Binding Path=Value}"/>
+               FontSize="{Binding Value}"/>
 
-        <Label Text="Podaj wartość: "/>
-
-        <Entry Text="{Binding Source={x:Reference thisPage}, Path=}"/>
-
+        <Label Text="Podaj wartość:"/>
+        <Entry Text="{Binding Source={x:Reference thisPage},Path=Message}"/>
         <Button Text="Wykonaj"
-                Clicked="ButtonClicked"/>
-
-        <Label/>
+                Clicked="Button_Clicked"/>
+        <Label x:Name="lab"/>
 
         <Label Text="To jest label"
                VerticalOptions="EndAndExpand"
                HorizontalOptions="Center"
-               Margin="0, 0, 0, 50"
+               Margin="0,0,0,50"
                x:Name="rotationLabel"/>
     </StackLayout>
 
