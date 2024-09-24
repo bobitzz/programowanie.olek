@@ -32,5 +32,4 @@
                Margin="0,0,0,50"
                x:Name="rotationLabel"/>
     </StackLayout>
-
 </ContentPage>
