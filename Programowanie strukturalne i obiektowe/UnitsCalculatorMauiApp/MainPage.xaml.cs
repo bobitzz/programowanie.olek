@@ -47,3 +47,5 @@ namespace UnitsCalculatorMauiApp
     }
 
 }
+
+//wyszstko na mm potem konwetowac i wyswietlic poprawne wartosci, uzyc switcha
