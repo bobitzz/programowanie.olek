@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnitCalculatorMauiApp.MainPage"
+             x:Name="thisPage"
+             BindingContext="{x:Reference thisPage}">
+
+    <StackLayout>
+        <VerticalStackLayout>
+            <Label>Wybierz z jakich miar chcesz przeliczac</Label>
+
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                <Picker ItemsSource="{Binding UnitsCollection}"
+                        SelectedItem="{Binding SelectedUnit}"/>
+
+                <Picker ItemsSource="{Binding UnitsCollection}"
+                        SelectedItem="{Binding SelectedUnitToChange}"/>
+            </HorizontalStackLayout>
+
+            <Entry Text="{Binding UnitToChange}"/>
+
+            <Button Text="Przelicz"
+                    Clicked="Button_Clicked"
+                    HorizontalOptions="Center"/>
+
+            <Label Text="{Binding UnitCalculatorResult}"
+                   HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </StackLayout>
+
+</ContentPage>
