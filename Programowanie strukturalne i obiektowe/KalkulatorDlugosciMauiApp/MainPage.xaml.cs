@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace UnitsCalculatorMauiApp
+namespace KalkulatorDlugosciMauiApp
 {
     public partial class MainPage : ContentPage
     {
-        Collection<string> UnitsCollection;
+        public Collection<string> UnitsCollection { get; set; }
         public string SelectedUnit { get; set; }
         public string SelectedUnitToChange { get; set; }
         public string UnitToChange { get; set; }
@@ -40,7 +40,7 @@ namespace UnitsCalculatorMauiApp
         {
             double.TryParse(UnitToChange, out double unitToChange);
 
-            switch(SelectedUnitToChange)
+            switch (SelectedUnitToChange)
             {
                 case "mm":
                     showResult(MilimettersToCentimeter(unitToChange, SelectedUnit));
@@ -64,7 +64,7 @@ namespace UnitsCalculatorMauiApp
 
         private double MilimettersToCentimeter(double value, string unit)
         {
-            switch(unit)
+            switch (unit)
             {
                 case "mm":
                     return value;
@@ -94,5 +94,3 @@ namespace UnitsCalculatorMauiApp
     }
 
 }
-
-//wyszstko na mm potem konwetowac i wyswietlic poprawne wartosci, uzyc switcha

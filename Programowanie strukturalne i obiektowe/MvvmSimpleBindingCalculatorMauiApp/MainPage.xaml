@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="clr-namespace:MvvmSimpleBindingCalculatorMauiApp"
+             x:Class="MvvmSimpleBindingCalculatorMauiApp.MainPage">
+    <ContentPage.BindingContext>
+        <viewModel:CalculatorViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <StackLayout Orientation="Horizontal"
+             Background="LightBlue">
+            <Label Text="Pierwsza liczba: "
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   Text="{Binding firstNumber}"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal"
+                     Background="Tan">
+            <Label Text="Pierwsza liczba: "
+                   FontSize="20"
+                   VerticalOptions="Center"/>
+            <Entry HorizontalOptions="FillAndExpand"
+                   Text="{Binding secondNumber}"/>
+        </StackLayout>
+
+        <Label Text="Operacja do wykonania"
+               FontSize="20"/>
+
+        <RadioButton Content="+" 
+                     FontSize="20"
+                     x:Name="operationAddRadioButton"/>
+        <RadioButton Content="-" 
+                     FontSize="20"
+                     x:Name="operationSubRadioButton"/>
+        <RadioButton Content="*"
+                     FontSize="20"
+                     x:Name="operationMulRadioButton"/>
+        <RadioButton Content="/"
+                     FontSize="20"
+                     x:Name="operationDivRadioButton"/>
+
+        <Button Text="Oblicz" 
+                HorizontalOptions="Start"
+                FontSize="20"
+                Clicked="Button_Clicked"/>
+
+        <Label Text="{Binding Source={x:Reference resultLabel},Path=Value}"/>
+    </StackLayout>
+
+</ContentPage>
