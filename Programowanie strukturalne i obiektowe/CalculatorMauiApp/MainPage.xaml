@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorMauiApp.MainPage"
+             xmlns:viewModel="clr-namespace:CalculatorMauiApp">
+
+    <ContentPage.BindingContext>
+        <viewModel:CalculatorViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid ColumnDefinitions="*,*,*,*,*"
+          RowDefinitions="1.5*,*,*,*,*">
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="5"
+               BackgroundColor="Aquamarine"
+               Text="{Binding CalculatingResult}"/>
+
+        <Button Text="7"
+                Grid.Column="0"
+                Grid.Row="1"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="8"
+                Grid.Column="1"
+                Grid.Row="1"                
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+
+        <Button Text="9"
+                Grid.Column="2"
+                Grid.Row="1"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+
+        <Button Text="4"
+                Grid.Column="0"
+                Grid.Row="2"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="5"
+                Grid.Column="1"
+                Grid.Row="2"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="6"
+                Grid.Column="2"
+                Grid.Row="2"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+
+        <Button Text="1"
+                Grid.Column="0"
+                Grid.Row="3"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="2"
+                Grid.Column="1"
+                Grid.Row="3"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="3"
+                Grid.Column="2"
+                Grid.Row="3"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+
+        <Button Text="0"
+                Grid.Column="0"
+                Grid.Row="4"
+                Grid.ColumnSpan="3"
+                Command="{Binding NumberCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+
+        <Button Text="+"
+                Grid.Column="3"
+                Grid.Row="1"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="-"
+                Grid.Column="3"
+                Grid.Row="2"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="*"
+                Grid.Column="3"
+                Grid.Row="3"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+        <Button Text="/"
+                Grid.Column="3"
+                Grid.Row="4"
+                Command="{Binding OperationCommand}"
+                CommandParameter="{Binding Text, Source={x:RelativeSource Self}}"/>
+    </Grid>
+
+</ContentPage>
