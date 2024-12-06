@@ -1,0 +1,47 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EgzaminMauiApp.MainPage"
+             xmlns:viewmodel="clr-namespace:GameViewModel">
+
+    <ContentPage.BindingContext>
+        <viewmodel:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout BackgroundColor="Bisque">
+        <Label Text="Gra w kości. Autor"
+               BackgroundColor="Red"
+               TextColor="White"/>
+
+        <Button Text="RZUĆ KOŚĆMI"
+                BackgroundColor="Orange"
+                TextColor="White"
+                HorizontalOptions="Center"
+                Command="{Binding ThrowCommand}"/>
+
+        <StackLayout HeightRequest="60"
+                     Margin="11"
+                     Orientation="Horizontal"
+                     HorizontalOptions="CenterAndExpand">
+            <Image Source="{Binding Dice1}"/>
+            <Image Source="{Binding Dice2}"/>
+            <Image Source="{Binding Dice3}"/>
+            <Image Source="{Binding Dice4}"/>
+            <Image Source="{Binding Dice5}"/>
+        </StackLayout>
+
+        <Label Text="Wynik tego losowania: "
+               HorizontalOptions="Center"
+               Text="{Binding ResultShow}"/>
+
+        <Label Text="Wynik gry: "
+               HorizontalOptions="Center"
+               Text="{Binding ResultShowAllGame}"/>
+
+        <Button Text="RESETUJ WYNIK"
+                BackgroundColor="Orange"
+                TextColor="White"
+                HorizontalOptions="Center"
+                Command="{Binding ResetCommand}"/>
+    </VerticalStackLayout>
+
+</ContentPage>
