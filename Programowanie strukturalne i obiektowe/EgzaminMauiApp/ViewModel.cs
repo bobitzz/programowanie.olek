@@ -1,13 +1,16 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace EgzaminMauiApp
 {
-    internal class GameViewModel : BindableObject
+    public class ViewModel : BindableObject
     {
+        #region propfull
         private string currentRollResult;
         public string CurrentRollResult
         {
@@ -77,18 +80,19 @@ namespace EgzaminMauiApp
             get { return resetGameCommand; }
             set { resetGameCommand = value; }
         }
+        #endregion
 
-        private string[] diceImages =
+        private string[] dieceImages =
         {
         "k1.jpg",
-        "k2.jpg",
+        "k2.jpg", 
         "k3.jpg",
         "k4.jpg",
         "k5.jpg",
         "k6.jpg",
     };
 
-        public GameViewModel()
+        public ViewModel()
         {
             RollCommand = new Command(RollDice);
             ResetGameCommand = new Command(ResetGame);
@@ -104,23 +108,23 @@ namespace EgzaminMauiApp
         public void RollDice()
         {
             Random random = new Random();
-            Die1 = diceImages[random.Next(0, 6)];
-            Die2 = diceImages[random.Next(0, 6)];
-            Die3 = diceImages[random.Next(0, 6)];
-            Die4 = diceImages[random.Next(0, 6)];
-            Die5 = diceImages[random.Next(0, 6)];
+            Die1 = dieceImages[random.Next(0, 5)];
+            Die2 = dieceImages[random.Next(0, 5)];
+            Die3 = dieceImages[random.Next(0, 5)];
+            Die4 = dieceImages[random.Next(0, 5)];
+            Die5 = dieceImages[random.Next(0, 5)];
 
             int rollResult = 5;
-            rollResult += Array.IndexOf(diceImages, Die1);
-            rollResult += Array.IndexOf(diceImages, Die2);
-            rollResult += Array.IndexOf(diceImages, Die3);
-            rollResult += Array.IndexOf(diceImages, Die4);
-            rollResult += Array.IndexOf(diceImages, Die5);
+            rollResult += Array.IndexOf(dieceImages, Die1);
+            rollResult += Array.IndexOf(dieceImages, Die2);
+            rollResult += Array.IndexOf(dieceImages, Die3);
+            rollResult += Array.IndexOf(dieceImages, Die4);
+            rollResult += Array.IndexOf(dieceImages, Die5);
 
             totalScore += rollResult;
 
-            CurrentRollResult = $"Current roll result: {rollResult}";
-            TotalGameResult = $"Total game score: {totalScore}";
+            CurrentRollResult = $"Wynik tego losowania: {rollResult}";
+            TotalGameResult = $"Wynik gry: {totalScore}";
         }
 
         public void ResetGame()
@@ -130,9 +134,9 @@ namespace EgzaminMauiApp
             Die3 = "question.jpg";
             Die4 = "question.jpg";
             Die5 = "question.jpg";
-            CurrentRollResult = "Current roll result: 0";
+            CurrentRollResult = "Wynik tego losowania: 0";
             totalScore = 0;
-            TotalGameResult = "Total game score: 0";
+            TotalGameResult = "Wynik gry: 0";
         }
     }
 }
