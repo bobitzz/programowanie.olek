@@ -1,0 +1,45 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vievmodel="clr-namespace:QuizMauiApp"
+             x:Class="QuizMauiApp.MainPage">
+
+    <ContentPage.BindingContext>
+        <vievmodel:ViewModel/>
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout>
+        <Label Text="Treść pytania: "/>
+        <Label Text="{Binding QuestionText}"/>
+
+        <RadioButton Content="{Binding CurrentQuestion.Answers[0]}"
+                     IsChecked="{Binding SelectedAnswer, ConverterParameter=0}"/>
+        <RadioButton Content="{Binding CurrentQuestion.Answers[1]}"
+                     IsChecked="{Binding SelectedAnswer, ConverterParameter=1}"/>
+        <RadioButton Content="{Binding CurrentQuestion.Answers[2]}"
+                     IsChecked="{Binding SelectedAnswer, ConverterParameter=2}"/>
+        <RadioButton Content="{Binding CurrentQuestion.Answers[3]}"
+                     IsChecked="{Binding SelectedAnswer, ConverterParameter=3}"/>
+
+            <StackLayout Orientation="Horizontal">
+
+            <Button Text="Poprzednie pytanie"
+                    WidthRequest="250"
+                    Command="{Binding PreviousQuestion}"/>
+            <Button Text="Następne pytanie"
+                    WidthRequest="250"
+                    Command="{Binding NextQuestion}"/>
+
+            <Button Text="Sprawdź"
+                    WidthRequest="250"
+                    HorizontalOptions="EndAndExpand"
+                    Command="{Binding CheckQuestion}"/>
+            <Button Text="Od nowa"
+                    WidthRequest="250"
+                    
+                    HorizontalOptions="End"
+                    Command="{Binding ResetQuestion}"/>
+
+        </StackLayout>
+        <Label Text="{Binding Result}"/>
+    </VerticalStackLayout>
+</ContentPage>
