@@ -1,6 +1,17 @@
 ﻿1. Tworzymy projekt Class Library
 2. Kasujemy plik Class1.cs
 3. Instalcja bibliotek
-	Microsoft.EntityFrameworkCore
-	Version="8.0.12"
-4. 
+	1)	Microsoft.EntityFrameworkCore
+		Version="8.0.12"
+	2)	Pomelo.EntityFrameworkCore.MySql
+		Version="8.0.2
+	3)	Microsoft.EntityFrameworkCore.Relational
+		Version="8.0.12""
+	4)	Microsoft.EntityFrameworkCore.Tools"
+		Version="8.0.12"
+4. Wykonujemy polecenie:
+	Scaffold-DbContext "server=localhost;database=people4c;user=root"
+	Pomelo.EntityFrameworkCore.MySql
+	-OutputDir Models
+	-Context PeopleDBContext
+	-ContextDir .
