@@ -1,0 +1,39 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Quiz1._2MauiApp"
+             x:Class="Quiz1._2MauiApp.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:QuizViewModel/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20">
+
+        <Label Text="{Binding CurrentQuestion.Text}"
+               FontSize="22"
+               HorizontalOptions="Center"
+               Margin="10" />
+
+        <CollectionView ItemsSource="{Binding CurrentQuestion.Answers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsSelected}" BindingContext="{Binding Text}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Label Text="{Binding ResultMessage}"
+               FontSize="20"
+               TextColor="Red"
+               HorizontalOptions="Center"
+               Margin="10" />
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Button Text="Poprzednie" Command="{Binding PreviousQuestionCommand}" />
+            <Button Text="Następne" Command="{Binding NextQuestionCommand}" />
+            <Button Text="Sprawdź" Command="{Binding CheckAnswersCommand}" />
+            <Button Text="Od nowa" Command="{Binding ResetQuizCommand}" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

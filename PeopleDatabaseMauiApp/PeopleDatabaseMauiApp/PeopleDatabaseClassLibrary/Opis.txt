@@ -1,0 +1,6 @@
+﻿1. Tworzymy projekt Class Library
+2. Kasujemy plik Class1.cs
+3. Instalcja bibliotek
+	Microsoft.EntityFrameworkCore
+	Version="8.0.12"
+4. 
