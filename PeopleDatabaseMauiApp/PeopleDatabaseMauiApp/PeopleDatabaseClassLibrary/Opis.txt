@@ -10,8 +10,4 @@
 	4)	Microsoft.EntityFrameworkCore.Tools"
 		Version="8.0.12"
 4. Wykonujemy polecenie:
-	Scaffold-DbContext "server=localhost;database=people4c;user=root"
-	Pomelo.EntityFrameworkCore.MySql
-	-OutputDir Models
-	-Context PeopleDBContext
-	-ContextDir .
+	Scaffold-DbContext "server=localhost;database=people4c;user=root" Pomelo.EntityFrameworkCore.MySql -OutputDir Models -Context PeopleDBContext -ContextDir .
