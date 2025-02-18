@@ -31,6 +31,24 @@
                 HorizontalOptions="Center"
                 Command="{Binding AddPersonCommand}"/>
 
+        <Label Text="Read"
+               FontSize="20"/>
+        <CollectionView ItemsSource="{Binding People}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding Name}"
+                               Margin="0,0,10,0"/>
+                        <Label Text="{Binding Surname}"
+                               Margin="0,0,10,0"/>
+                        <Label Text="{Binding Age}"
+                               Margin="0,0,10,0"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Odświerz"
+                Command="{Binding ReadPersonCommand}"/>
     </StackLayout>
-    
+
 </ContentPage>
