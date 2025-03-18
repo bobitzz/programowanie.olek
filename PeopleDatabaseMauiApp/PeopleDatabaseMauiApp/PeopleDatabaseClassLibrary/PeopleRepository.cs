@@ -28,6 +28,11 @@ namespace PeopleDatabaseClassLibrary
             dbContext.SaveChanges();
         }
 
+        public void DeletePerson(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Person> GetPeople()
         { 
             /*
@@ -41,6 +46,33 @@ namespace PeopleDatabaseClassLibrary
                 .ThenByDescending(p => p.Name)
                 //.select(p => p)
                 .ToList();
+        }
+
+        public void UpdatePerson(int id, string name, string surname, int age)
+        {
+            /*
+             update people
+                set name = nameNET,
+                    surname = surnameNET
+                    age = ageNET
+              where id = idNET
+             */
+
+
+            /*
+                select *
+                  from people
+                 where id = idNET
+             */
+            //Person personToUpdate = dbContext.People.Where(p=> p.Id == id).FirstOrDefault();
+            Person? personToUpdate = dbContext.People.FirstOrDefault(p => p.Id == id);
+            if (personToUpdate != null)
+            {
+                personToUpdate.Name = name;
+                personToUpdate.Surname = surname;
+                personToUpdate.Age = age;
+                dbContext.SaveChanges();
+            }
         }
     }
 }

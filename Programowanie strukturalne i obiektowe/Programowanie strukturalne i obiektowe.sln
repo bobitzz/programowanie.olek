@@ -155,7 +155,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuizMauiApp", "QuizMauiApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz1.2MauiApp", "Quiz1.2MauiApp\Quiz1.2MauiApp.csproj", "{D7590A11-D6DA-463E-9E84-129C0316AA08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quiz2MauiApp", "Quiz2MauiApp\Quiz2MauiApp.csproj", "{EDA2796D-7D9B-4E7F-A889-0E803EA3BA8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quiz2MauiApp", "Quiz2MauiApp\Quiz2MauiApp.csproj", "{EDA2796D-7D9B-4E7F-A889-0E803EA3BA8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
