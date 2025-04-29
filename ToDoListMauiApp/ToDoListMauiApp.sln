@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListMauiApp", "ToDoListMauiApp\ToDoListMauiApp.csproj", "{6F44DCB0-969D-405A-A0E9-8FC21E862A87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoClassLibrary", "ToDoClassLibrary\ToDoClassLibrary.csproj", "{90AF5325-154B-4F8B-BF5B-4D56CFAF748B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F44DCB0-969D-405A-A0E9-8FC21E862A87}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{90AF5325-154B-4F8B-BF5B-4D56CFAF748B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AF5325-154B-4F8B-BF5B-4D56CFAF748B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AF5325-154B-4F8B-BF5B-4D56CFAF748B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AF5325-154B-4F8B-BF5B-4D56CFAF748B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F0F2934-7276-4516-B730-32DDC37AA587}
+	EndGlobalSection
+EndGlobal
