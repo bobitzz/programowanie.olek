@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inf04._2025._06._01MauiApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="16" BackgroundColor="Cornsilk">
+            <BoxView x:Name="LargeRect" HeightRequest="100" Color="White"/>
+
+            <Label Text="Dobierz kolor suwakami i zapisz przyciskiem"/>
+
+            <Label Text="R"/>
+            <Slider x:Name="SliderR" Minimum="0" Maximum="255" ValueChanged="OnSliderChanged"/>
+            <Label Text="G"/>
+            <Slider x:Name="SliderG" Minimum="0" Maximum="255" ValueChanged="OnSliderChanged"/>
+            <Label Text="B"/>
+            <Slider x:Name="SliderB" Minimum="0" Maximum="255" ValueChanged="OnSliderChanged"/>
+            
+            <Button Text="Pobierz" Clicked="OnPobierzClicked" BackgroundColor="Peru"/>
+            <Label x:Name="LabelPobranyRGB" Text="Pobrany kolor: (255,255,255)" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
